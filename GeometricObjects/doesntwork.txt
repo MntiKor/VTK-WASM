@@ -1,1 +1,1 @@
-CellTypeSource: shader does not compile
+CellTypeSource, ConeDemo: shader does not compile
