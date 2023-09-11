@@ -1,1 +1,1 @@
-CellTypeSource, ConeDemo, ConvexPointSet: shader does not compile (vtkShaderProgram called by vtkOpenGL30PolyDataMapper)
+CellTypeSource, ConeDemo, ConvexPointSet, IsoparametricCellsDemo: shader does not compile (vtkShaderProgram called by vtkOpenGL30PolyDataMapper)
