@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-project(Arrow)
+project(Axes)
 
 # # -----------------------------------------------------------------------------
 # # EMSCRIPTEN only
@@ -16,18 +16,18 @@ endif ()
 # Handle VTK dependency
 # -----------------------------------------------------------------------------
 
-find_package(VTK
-COMPONENTS
-    CommonColor
-    CommonCore
-    CommonDataModel
-    CommonExecutionModel
-    FiltersGeneral # VTK pipeline
-    ImagingCore
-
-    InteractionStyle    # Mouse handling
-    RenderingOpenGL2    # For Rendering
-    RenderingUI         # For SDL2 Window
+find_package(VTK COMPONENTS
+  CommonColor
+  CommonCore
+  CommonDataModel
+  CommonTransforms
+  FiltersSources
+  InteractionStyle
+  RenderingAnnotation
+  RenderingCore
+  RenderingFreeType
+  RenderingGL2PSOpenGL2
+  RenderingOpenGL2
 )
 
 if (NOT VTK_FOUND)
@@ -39,16 +39,12 @@ endif ()
 # Compile example code
 # -----------------------------------------------------------------------------
 
-add_executable(Arrow Arrow.cxx)
+add_executable(Axes Axes.cxx)
 
-target_link_libraries(Arrow
+target_link_libraries(Axes
   PRIVATE
-    VTK::FiltersSources
-    VTK::InteractionStyle
-    VTK::RenderingOpenGL2
-    VTK::RenderingUI
-    VTK::IOImport
-)
+  ${VTK_LIBRARIES}
+  )
 # -----------------------------------------------------------------------------
 
 # WebAssembly build options
@@ -65,10 +61,10 @@ set(emscripten_debug_options)
 set(DEBUGINFO "PROFILE" CACHE STRING "Type of debug info")
 set_property(CACHE DEBUGINFO PROPERTY
   STRINGS
-    NONE              # -g0
-    READABLE_JS       # -g1
-    PROFILE           # -g2
-    DEBUG_NATIVE      # -g3
+  NONE              # -g0
+  READABLE_JS       # -g1
+  PROFILE           # -g2
+  DEBUG_NATIVE      # -g3
 )
 
 if(DEBUGINFO STREQUAL "NONE")
@@ -106,13 +102,13 @@ set(emscripten_optimizations)
 set(OPTIMIZE "SMALLEST_WITH_CLOSURE" CACHE STRING "Emscripten optimization")
 set_property(CACHE OPTIMIZE PROPERTY
   STRINGS
-    NO_OPTIMIZATION       # -O0
-    LITTLE                # -O1
-    MORE                  # -O2
-    BEST                  # -O3
-    SMALL                 # -Os
-    SMALLEST              # -Oz
-    SMALLEST_WITH_CLOSURE # -Oz --closure 1
+  NO_OPTIMIZATION       # -O0
+  LITTLE                # -O1
+  MORE                  # -O2
+  BEST                  # -O3
+  SMALL                 # -Os
+  SMALLEST              # -Oz
+  SMALLEST_WITH_CLOSURE # -Oz --closure 1
 )
 
 if(OPTIMIZE STREQUAL "NO_OPTIMIZATION")
@@ -148,18 +144,18 @@ elseif(OPTIMIZE STREQUAL "SMALLEST_WITH_CLOSURE")
   )
 endif()
 
-target_compile_options(Arrow
+target_compile_options(Axes
   PUBLIC
-    ${emscripten_compile_options}
-    ${emscripten_optimizations}
-    ${emscripten_debug_options}
+  ${emscripten_compile_options}
+  ${emscripten_optimizations}
+  ${emscripten_debug_options}
 )
 
-target_link_options(Arrow
+target_link_options(Axes
   PUBLIC
-    ${emscripten_link_options}
-    ${emscripten_optimizations}
-    ${emscripten_debug_options}
+  ${emscripten_link_options}
+  ${emscripten_optimizations}
+  ${emscripten_debug_options}
 )
 
 # -----------------------------------------------------------------------------
@@ -167,7 +163,7 @@ target_link_options(Arrow
 # -----------------------------------------------------------------------------
 
 vtk_module_autoinit(
-  TARGETS  Arrow
+  TARGETS  Axes
   MODULES  ${VTK_LIBRARIES}
 )
 
@@ -176,10 +172,10 @@ vtk_module_autoinit(
 # -----------------------------------------------------------------------------
 
 add_custom_command(
-  TARGET Arrow
+  TARGET Axes
   POST_BUILD
   COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
-      $<TARGET_FILE_DIR:Arrow>
+  ${CMAKE_COMMAND} -E copy_if_different
+  "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
+  $<TARGET_FILE_DIR:Axes>
 )
