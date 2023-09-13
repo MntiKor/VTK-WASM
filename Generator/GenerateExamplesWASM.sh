@@ -20,7 +20,7 @@ do
     target_path=${target_dir}/${name}
     mkdir -p ${target_path}
     cp ${f} ${target_path}
-    for addon_file in ${source_dir}/${name}!(.md)
+    for addon_file in ${source_dir}/${name}.!(md)
     do
         cp ${addon_file} ${target_path}
     done
