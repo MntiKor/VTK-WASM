@@ -1,0 +1,7 @@
+if(VTK_USE_MYSQL)
+  add_subdirectory(MySQL)
+else()
+  set(SKIP "Cxx/Databases/SQL")
+  set(REQUIRE "VTK_USE_MYSQL")
+  message(STATUS "VTKWikiExamples: ${SKIP} requires ${REQUIRE} and will not be built")
+endif()
