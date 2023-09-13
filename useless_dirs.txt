@@ -1,0 +1,4 @@
+Dirs that don't have any graphical examples:
+- Math
+- CMakeTechniques
+- Matlab
