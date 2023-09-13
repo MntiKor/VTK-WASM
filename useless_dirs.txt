@@ -2,3 +2,6 @@ Dirs that don't have any graphical examples:
 - Math
 - CMakeTechniques
 - Matlab
+
+Dirs that won't compile:
+- Parallel
