@@ -57,4 +57,7 @@ VoxelsOnBoundary: wrong usage
 
 - Images:
 BackgroundImage: Background render broken
-CannyEdgeDetector CenterAnImage, Colored2DImageFusion, CombineImages, CombiningRGBChannels, DrawOnAnImage, ExtractComponents: wrong usage
+CannyEdgeDetector, CenterAnImage, Colored2DImageFusion, CombineImages, CombiningRGBChannels, DrawOnAnImage, ExtractComponents, ImageAccumulateGreyscale, ImageAnisotropicDiffusion2D, ImageCheckerboard, ImageCityBlockDistance, ImageDilateErode3D, ImageHistogram, ImageHybridMedian2D, ImageMagnify, ImageOpenClose3D, ImageRange3D: wrong usage
+ImageAccumulate, ImageExport: no render
+ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper: no error but bad render
+ImageFFT, ImageRFFT: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
