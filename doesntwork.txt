@@ -14,13 +14,13 @@ IsoparametricCellsDemo: WebGL warning (blitFrameBuffer)
 OpenVR*: do I have to explain why ?
 PlanesIntersection, PolygonIntersection: no interest because no render
 
-Meshes:
+- Meshes:
 AddCell, CellEdges: no renderer
 FitToHeightMap, IdentifyHoles, InterpolateFieldDataDemo, MatrixMathFilter, PointInterpolator: wrong usage
 FillHoles: works but default example is useless (trying to fill holes in a sphere...)
 Subdivision: little glitch, middle sphere isn't actually a sphere
 
-Rendering:
+- Rendering:
 FlatVersusGouraud, Rainbow, Rotations, StripFan, WalkCow: wrong Usage
 InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
 Model: only one of the 2 RenderWindow shows, and its interactor is broken
@@ -29,3 +29,32 @@ PBR*: missing package (vtk_cli11)
 RotationsA,B,C,D: missing Rotations.cxx + wrong usage
 WalkCowA,B: missing WalkCow.cxx + wrong usage
 SpecularSpheres: low framerate
+
+- DataStructures:
+BuildLocatorFromKClosestPoints, BuildOctree, ClosestNPoints, IncrementalOctreePointLocator, KDTreeAccessPoints, KDTreeFindPointsWithinRadius, KdTree, KdTreePointLocatorClosestPoint, ModifiedBSPTreeIntersectWithLine, OBBTreeIntersectWithLine, OctreeClosestPoint, OctreeFindPointsWithinRadius, OctreeKClosestPoints: no render
+DataStructureComparison: warning: vtkMath::Jacobi: error extracting eigenfunctions
+KDTreeFindPointsWithinRadiusDemo, OctreeFindPointsWithinRadiusDemo, PointLocatorFindPointsWithinRadiusDemo, StaticLocatorFindPointsWithinRadiusDemo, VisualizeKDTree: wrong usage
+KDTreeTimingDemo, ModifiedBSPTreeTimingDemo, OBBTreeTimingDemo, OctreeTimingDemo: Error: no override found for 'vtkContextDevice2D'
+VisualizeModifiedBSPTree, VisualizeOBBTree: WebGL warning: blitFrameBuffer: depth buffer format must match if selected
+
+- ExplicitStructuredGrid:
+LoadESGrid: wrong usage
+
+- Graphs:
+AdjacencyMatrixToEdgeTable: wrong usage
+AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
+BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
+BreadthFirstDistance, ConnectedComponents, DepthFirstSearchIterator, DirectedGraphToMutableDirectedGraph, EdgeListIterator, InEdgeIterator, MinimumSpanningTree, MutableDirectedGraphToDirectedGraph, NOVCAGraph, OutEdgeIterator, RemoveIsolatedVertices, TreeBFSIterator, TreeToMutableDirectedGraph: no render
+SideBySideGraphs: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
+
+- ImageData:
+CellIdFromGridCoordinates, GetCellCenter, ImageDataToPointSet, ImageIterator, ImageReclice, IterateImageData: no render
+ImageDataGeometryFilter, ImageIteratorDemo, ImageNormalize, ImageTranslateExtent, ImageWeightedSum: no error but bad render
+VoxelsOnBoundary: wrong usage
+
+- ImageProcessing:
+*: either wrong usage or no render
+
+- Images:
+BackgroundImage: Background render broken
+CannyEdgeDetector CenterAnImage, Colored2DImageFusion, CombineImages, CombiningRGBChannels, DrawOnAnImage, ExtractComponents: wrong usage
