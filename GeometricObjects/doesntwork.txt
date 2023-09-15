@@ -1,4 +1,0 @@
-LinearCellDemo, ParametricObjectsDemo: does not compile (vtk_cli11.h missing)
-IsoparametricCellsDemo: WebGL warning (blitFrameBuffer)
-OpenVR*: do I have to explain why ?
-PlanesIntersection, PolygonIntersection: no interest because no render

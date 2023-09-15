@@ -1,0 +1,31 @@
+- Annotation:
+XYPlot: wrong Usage, files missing
+
+- CompositeData:
+Generate2DAMRDataSetWithPulse, Generate3DAMRDataSetWithPulse: no renderer
+
+- Filtering:
+GenericClip: does not compile (missing module TestingGenericBridge)
+SelectionSource, VectorFieldNonZeroExtraction: no render, so no interest
+
+- GeometricObjects:
+LinearCellDemo, ParametricObjectsDemo: does not compile (vtk_cli11.h missing)
+IsoparametricCellsDemo: WebGL warning (blitFrameBuffer)
+OpenVR*: do I have to explain why ?
+PlanesIntersection, PolygonIntersection: no interest because no render
+
+Meshes:
+AddCell, CellEdges: no renderer
+FitToHeightMap, IdentifyHoles, InterpolateFieldDataDemo, MatrixMathFilter, PointInterpolator: wrong usage
+FillHoles: works but default example is useless (trying to fill holes in a sphere...)
+Subdivision: little glitch, middle sphere isn't actually a sphere
+
+Rendering:
+FlatVersusGouraud, Rainbow, Rotations, StripFan, WalkCow: wrong Usage
+InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
+Model: only one of the 2 RenderWindow shows, and its interactor is broken
+MotionBlur, OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
+PBR*: missing package (vtk_cli11)
+RotationsA,B,C,D: missing Rotations.cxx + wrong usage
+WalkCowA,B: missing WalkCow.cxx + wrong usage
+SpecularSpheres: low framerate

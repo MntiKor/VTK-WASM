@@ -1,2 +1,0 @@
-GenericClip: does not compile (missing module TestingGenericBridge)
-SelectionSource, VectorFieldNonZeroExtraction: no render, so no interest

@@ -1,4 +1,0 @@
-AddCell, CellEdges: no renderer
-FitToHeightMap, IdentifyHoles, InterpolateFieldDataDemo, MatrixMathFilter, PointInterpolator: wrong usage
-FillHoles: works but default example is useless (trying to fill holes in a sphere...)
-Subdivision: little glitch, middle sphere isn't actually a sphere

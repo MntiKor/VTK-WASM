@@ -1,8 +1,0 @@
-FlatVersusGouraud, Rainbow, Rotations, StripFan, WalkCow: wrong Usage
-InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
-Model: only one of the 2 RenderWindow shows, and its interactor is broken
-MotionBlur, OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
-PBR*: missing package (vtk_cli11)
-RotationsA,B,C,D: missing Rotations.cxx + wrong usage
-WalkCowA,B: missing WalkCow.cxx + wrong usage
-SpecularSpheres: low framerate
