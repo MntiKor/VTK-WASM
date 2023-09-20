@@ -61,3 +61,5 @@ CannyEdgeDetector, CenterAnImage, Colored2DImageFusion, CombineImages, Combining
 ImageAccumulate, ImageExport: no render
 ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper: no error but bad render
 ImageFFT, ImageRFFT: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
+ - Shaders:
+ *: wrong usage

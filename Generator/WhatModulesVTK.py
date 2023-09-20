@@ -169,7 +169,7 @@ def generate_find_package(vtk_src_dir, application_srcs):
         all_modules.add('VTK::RenderingOpenGL2')
         all_modules.add('VTK::InteractionStyle')
         all_modules.add('VTK::RenderingFreeType')
-        all_modules.add('VTK::RenderingGL2PSOpenGL2')
+        # all_modules.add('VTK::RenderingGL2PSOpenGL2')
         # all_modules.add('VTK::RenderingContextOpenGL2')
     if 'VTK::DomainsChemistry' in all_modules:
         all_modules.add('VTK::DomainsChemistryOpenGL2')
@@ -186,7 +186,7 @@ def generate_find_package(vtk_src_dir, application_srcs):
     for m in sorted(all_modules):
         m = m.removeprefix('VTK::')
         res.append(' ' * 2 + m)
-    res.append(')')
+    res.append('REQUIRED)')
     return res
 
 

@@ -1,0 +1,55 @@
+{
+    "3DSImporter":{
+        "args":["iflamingo.3ds"],
+        "files":["iflamingo.3ds"]
+    },
+    "ReadAllPolyDataTypesDemo":{
+        "args":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"],
+        "files":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"]
+    },
+    "DEMReader":{
+        "args":["SainteHelens.dem"],
+        "files":["SainteHelens.dem"]
+    },
+    "GLTFImporter":{
+        "args":["data/FlightHelmet/FlightHelmet.gltf"],
+        "files":["FlightHelmet"]
+    },
+    "HDRReader":{
+        "args":["spiaggia_di_mondello_1k.hdr"],
+        "files":["spiaggia_di_mondello_1k.hdr"]
+    },
+    "ImageReader2Factory":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ImportPolyDataScene":{
+        "args":["ExportBunny.vtp"],
+        "files":["ExportBunny.vtp"]
+    },
+    "IndividualVRML":{
+        "args":["teapot.wrl", "teapot"],
+        "files":["teapot.wrl"]
+    },
+    "JPEGReader":{
+        "args":["Pileated.jpg"],
+        "files":["Pileated.jpg"]
+    },
+    "MetaImageReader":{
+        "args":["Gourds.mha"],
+        "files":["Gourds.mha"]
+    },
+    "OBJImporter":{
+        "args":["data/doorman/doorman.obj", "data/doorman/doorman.mtl", "doorman"],
+        "files":["doorman"]
+    },
+    "PNGReader":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ParticleReader":{
+        "args":["Particles.raw"],
+        "files":["Particles.raw"]
+    }
+
+}

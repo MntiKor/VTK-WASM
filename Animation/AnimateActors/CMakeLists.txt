@@ -27,6 +27,7 @@ find_package(VTK
   RenderingFreeType
   RenderingGL2PSOpenGL2
   RenderingOpenGL2
+  REQUIRED
 )
 
 if (NOT VTK_FOUND)

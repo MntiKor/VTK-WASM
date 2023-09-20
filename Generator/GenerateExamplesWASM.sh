@@ -14,7 +14,6 @@ shopt -s extglob
 
 for f in ${source_dir}/*.cxx
 do
-    find_packages=$(python WhatModulesVTK.py ${vtk_source_dir} ${f})
     name=$(basename ${f} .cxx)
     echo ${name}
     target_path=${target_dir}/${name}
@@ -24,9 +23,5 @@ do
     do
         cp ${addon_file} ${target_path}
     done
-    cp CMakeLists.txt.template ${target_path}/CMakeLists.txt
-    cp index.html.template ${target_path}/index.html
-    sed -i "s/XXX/${name}/g" ${target_path}/index.html
-    sed -i "s/XXX/${name}/g" ${target_path}/CMakeLists.txt
-    perl -pi -e "s/ZZZ/${find_packages}/g" ${target_path}/CMakeLists.txt
+    python3 GenerateHtmlCMake.py ${f} ${target_path} ${vtk_source_dir}
 done
