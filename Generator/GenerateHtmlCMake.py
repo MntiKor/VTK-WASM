@@ -1,6 +1,7 @@
 import argparse
 import json
 import shutil
+import glob
 import subprocess
 import os
 import errno
@@ -50,11 +51,17 @@ def GenerateExampleArgs(example_name, source_path, dest_path, vtk_source_path, a
     data = data.replace('XXX', example_name)
     module_arguments = []
     for arg in args_data.get('args'):
-        if (arg in args_data.get('files')):
-            module_arguments.append('/'.join(['data', arg]))
-        else:
-            module_arguments.append(arg)
+        module_arguments.append(arg)
     data = data.replace('YYY', '\', \''.join(module_arguments))
+
+    script_lines = []
+    for file in args_data.get('files'):
+        filename = os.path.splitext(file)[0]
+        script_lines.append('<script type="text/javascript" src="' + filename + '.js"></script>')
+        for file in glob.glob(r'packaged_data/' + filename + '.*'):
+            shutil.copy(file, os.path.join(dest_path, 'data'))
+    data = data.replace('ZZZ', '\n'.join(script_lines))
+
     with open(os.path.join(dest_path, 'index.html'), 'w') as index:
         index.write(data)
     shutil.copyfile('CMakeLists_arguments.txt.template', os.path.join(dest_path, 'CMakeLists.txt'))
@@ -78,15 +85,16 @@ def GenerateExampleArgs(example_name, source_path, dest_path, vtk_source_path, a
     result = process.stdout.decode('utf-8')
     data = data.replace('ZZZ', result)
     os.makedirs(os.path.join(dest_path, 'data'), exist_ok=True);
-    for filename in args_data.get('files'):
-        try:
-            shutil.copytree(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
-        except OSError as exc: # python >2.5
-            if exc.errno in (errno.ENOTDIR, errno.EINVAL):
-                shutil.copy(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
-            elif exc.errno == errno.EEXIST:
-                pass
-            else: raise
+    # for filename in args_data.get('files'):
+        # try:
+        #     shutil.copytree(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
+        # except OSError as exc: # python >2.5
+        #     if exc.errno in (errno.ENOTDIR, errno.EINVAL):
+        #         shutil.copy(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
+        #     elif exc.errno == errno.EEXIST:
+        #         pass
+        #     else: raise
+
     with open(os.path.join(dest_path, 'CMakeLists.txt'), 'w') as cmake:
         cmake.write(data)
 
