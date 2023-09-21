@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -9,6 +10,7 @@
   <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
   <script type='text/javascript'>
     var Module = {
+        'arguments': ['Gourds.pnm'],
       'canvas': (function () {
         var canvas = document.getElementById('canvas');
         canvas.addEventListener(
@@ -46,6 +48,7 @@
 
     window.mod = Module;
   </script>
+  <script type="text/javascript" src="Gourds.pnm.js"></script>
   <script type="text/javascript" src="ReadPNM.js"></script>
 </body>
 

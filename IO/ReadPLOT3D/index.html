@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -9,6 +10,7 @@
   <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
   <script type='text/javascript'>
     var Module = {
+        'arguments': ['combxyz.bin', 'combq.bin'],
       'canvas': (function () {
         var canvas = document.getElementById('canvas');
         canvas.addEventListener(
@@ -46,6 +48,8 @@
 
     window.mod = Module;
   </script>
+  <script type="text/javascript" src="combxyz.bin.js"></script>
+<script type="text/javascript" src="combq.bin.js"></script>
   <script type="text/javascript" src="ReadPLOT3D.js"></script>
 </body>
 

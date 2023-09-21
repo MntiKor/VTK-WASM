@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -9,6 +10,7 @@
   <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
   <script type='text/javascript'>
     var Module = {
+        'arguments': ['teapot.g', 'cowHead.vtp', 'horse.ply', 'trumpet.obj', '42400-IDGH.stl', 'v.vtk'],
       'canvas': (function () {
         var canvas = document.getElementById('canvas');
         canvas.addEventListener(
@@ -46,6 +48,12 @@
 
     window.mod = Module;
   </script>
+  <script type="text/javascript" src="teapot.g.js"></script>
+<script type="text/javascript" src="cowHead.vtp.js"></script>
+<script type="text/javascript" src="horse.ply.js"></script>
+<script type="text/javascript" src="trumpet.obj.js"></script>
+<script type="text/javascript" src="42400-IDGH.stl.js"></script>
+<script type="text/javascript" src="v.vtk.js"></script>
   <script type="text/javascript" src="ReadAllPolyDataTypesDemo.js"></script>
 </body>
 

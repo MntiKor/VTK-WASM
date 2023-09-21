@@ -1,4 +1,5 @@
 
+
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 project(VRMLImporter)
@@ -27,6 +28,7 @@ find_package(VTK
   RenderingOpenGL2
 REQUIRED)
 
+
 if (NOT VTK_FOUND)
   message("Skipping example: ${VTK_NOT_FOUND_MESSAGE}")
   return ()
@@ -52,6 +54,7 @@ set(emscripten_compile_options)
 list(APPEND emscripten_link_options
   "SHELL:-s WASM=1"
   "SHELL:-s ALLOW_MEMORY_GROWTH=1"
+  "SHELL:-s FORCE_FILESYSTEM"
 )
 
 set(emscripten_debug_options)
@@ -174,5 +177,6 @@ add_custom_command(
   COMMAND
     ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
+      "${CMAKE_CURRENT_SOURCE_DIR}/data/*"
       $<TARGET_FILE_DIR:VRMLImporter>
 )

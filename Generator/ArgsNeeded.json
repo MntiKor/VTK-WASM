@@ -3,16 +3,12 @@
         "args":["iflamingo.3ds"],
         "files":["iflamingo.3ds"]
     },
-    "ReadAllPolyDataTypesDemo":{
-        "args":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"],
-        "files":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"]
-    },
     "DEMReader":{
         "args":["SainteHelens.dem"],
         "files":["SainteHelens.dem"]
     },
     "GLTFImporter":{
-        "args":["data/FlightHelmet/FlightHelmet.gltf"],
+        "args":["FlightHelmet.gltf"],
         "files":["FlightHelmet"]
     },
     "HDRReader":{
@@ -40,7 +36,7 @@
         "files":["Gourds.mha"]
     },
     "OBJImporter":{
-        "args":["data/doorman/doorman.obj", "data/doorman/doorman.mtl", "doorman"],
+        "args":["doorman.obj", "doorman.mtl", "/"],
         "files":["doorman"]
     },
     "PNGReader":{
@@ -50,6 +46,121 @@
     "ParticleReader":{
         "args":["Particles.raw"],
         "files":["Particles.raw"]
+    },
+    "ReadAllPolyDataTypes":{
+        "args":["horse.ply"],
+        "files":["horse.ply"]
+    },
+    "ReadAllPolyDataTypesDemo":{
+        "args":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"],
+        "files":["teapot.g", "cowHead.vtp", "horse.ply", "trumpet.obj", "42400-IDGH.stl", "v.vtk"]
+    },
+    "ReadAllUnstructuredGridTypes":{
+        "args":["tetra.vtu"],
+        "files":["tetra.vtu"]
+    },
+    "ReadBMP":{
+        "args":["masonry.bmp"],
+        "files":["masonry.bmp"]
+    },
+    "ReadCML":{
+        "args":["porphyrin.cml"],
+        "files":["porphyrin.cml"]
+    },
+    "ReadDICOM":{
+        "args":["prostate.img"],
+        "files":["prostate.img"]
+    },
+    "ReadDICOMSeries":{
+        "args":["DicomTestImages"],
+        "files":["DicomTestImages"]
+    },
+    "ReadExodusData":{
+        "args":["mug.e", "converted"],
+        "files":["mug.e"]
+    },
+    "ReadImageData":{
+        "args":["vase.vti"],
+        "files":["vase.vti"]
+    },
+    "ReadLegacyUnstructuredGrid":{
+        "args":["VTKCellTypes.vtk"],
+        "files":["VTKCellTypes.vtk"]
+    },
+    "ReadOBJ":{
+        "args":["trumpet.obj"],
+        "files":["trumpet.obj"]
+    },
+    "ReadPDB":{
+        "args":["caffeine.pdb"],
+        "files":["caffeine.pdb"]
+    },
+    "ReadPLOT3D":{
+        "args":["combxyz.bin", "combq.bin"],
+        "files":["combxyz.bin", "combq.bin"]
+    },
+    "ReadPLY":{
+        "args":["shark.ply"],
+        "files":["shark.ply"]
+    },
+    "ReadPNM":{
+        "args":["Gourds.pnm"],
+        "files":["Gourds.pnm"]
+    },
+    "ReadPolyData":{
+        "args":["Torso.vtp"],
+        "files":["Torso.vtp"]
+    },
+    "ReadRectilinearGrid":{
+        "args":["RectilinearGrid.vtr"],
+        "files":["RectilinearGrid.vtr"]
+    },
+    "ReadSLC":{
+        "args":["vw_knee.slc"],
+        "files":["vw_knee.slc"]
+    },
+    "ReadSTL":{
+        "args":["42400-IDGH.stl"],
+        "files":["42400-IDGH.stl"]
+    },
+    "ReadStructuredGrid":{
+        "args":["StructuredGrid.vts"],
+        "files":["StructuredGrid.vts"]
+    },
+    "ReadTIFF":{
+        "args":["ColorCells.tif"],
+        "files":["ColorCells.tif"]
+    },
+    "ReadTextFile":{
+        "args":["TeapotPoints.txt"],
+        "files":["TeapotPoints.txt"]
+    },
+    "ReadUnknownTypeXMLFile":{
+        "args":["Bunny.vtp"],
+        "files":["Bunny.vtp"]
+    },
+    "ReadUnstructuredGrid":{
+        "args":["tetra.vtu"],
+        "files":["tetra.vtu"]
+    },
+    "SimplePointsReader":{
+        "args":["coords.txt"],
+        "files":["coords.txt"]
+    },
+    "StructuredGridReader":{
+        "args":["SampleStructGrid.vtk"],
+        "files":["SampleStructGrid.vtk"]
+    },
+    "StructuredPointsReader":{
+        "args":["ironProt.vtk"],
+        "files":["ironProt.vtk"]
+    },
+    "VRMLImporter":{
+        "args":["sextant.wrl"],
+        "files":["sextant.wrl"]
+    },
+    "VRMLImporterDemo":{
+        "args":["grasshop.wrl"],
+        "files":["grasshop.wrl"]
     }
-
 }

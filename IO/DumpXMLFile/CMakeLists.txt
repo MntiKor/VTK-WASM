@@ -24,6 +24,7 @@ find_package(VTK
   IOXML
 REQUIRED)
 
+
 if (NOT VTK_FOUND)
   message("Skipping example: ${VTK_NOT_FOUND_MESSAGE}")
   return ()

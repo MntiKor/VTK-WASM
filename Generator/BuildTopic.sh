@@ -1,8 +1,6 @@
 #!/bin/bash
 
 topic=$1
-count_working=0
-count_fails=0
 for example in ${topic}/*/
 do
 	mkdir ${example}/build
@@ -24,5 +22,3 @@ do
 	fi
 	cd /work
 done
-echo ${count_working} worked
-echo ${count_fails} failed

@@ -106,7 +106,6 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
       function assert(check, msg) {
         if (!check) throw msg + new Error().stack;
       }
-Module['FS_createPath']("/", "Data", true, true);
 
       /** @constructor */
       function DataRequest(start, end, audio) {
@@ -174,6 +173,6 @@ Module['FS_createPath']("/", "Data", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Data/iflamingo.3ds", "start": 0, "end": 260468}], "remote_package_size": 260468});
+    loadPackage({"files": [{"filename": "/iflamingo.3ds", "start": 0, "end": 260468}], "remote_package_size": 260468});
 
   })();
