@@ -1,0 +1,3 @@
+/work/SphereMap/build/CMakeFiles/SphereMap.dir
+/work/SphereMap/build/CMakeFiles/edit_cache.dir
+/work/SphereMap/build/CMakeFiles/rebuild_cache.dir

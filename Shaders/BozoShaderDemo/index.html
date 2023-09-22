@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+  <script type='text/javascript'>
+    var Module = {
+        'arguments': ['PerlinNoise.glsl', 'horse.ply', 'teapot.g', 'trumpet.obj', 'shark.ply', 'Torso.vtp', 'cow.g', 'Armadillo.ply', '42400-IDGH.stl', 'doorman.obj'],
+      'canvas': (function () {
+        var canvas = document.getElementById('canvas');
+        canvas.addEventListener(
+          "webglcontextlost",
+          function (e) {
+            console.error('WebGL context lost. You will need to reload the page.');
+            e.preventDefault();
+          },
+          false
+        );
+        return canvas;
+      })(),
+      'print': (function () {
+        return function (text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          console.info(text);
+        };
+      })(),
+      'printErr': function (text) {
+        text = Array.prototype.slice.call(arguments).join(' ');
+        console.error(text);
+      },
+      'onRuntimeInitialized': function () {
+        console.log('WASM runtime initialized');
+        // sends a resize event so that the render window fills up browser tab dimensions.
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 0);
+        // focus on the canvas to grab keyboard inputs.
+        canvas.setAttribute('tabindex', '0');
+        // grab focus when the render window region receives mouse clicks.
+        canvas.addEventListener('click', () => canvas.focus());
+      }
+    };
+
+    window.mod = Module;
+  </script>
+  <script type="text/javascript" src="PerlinNoise.glsl.js"></script>
+<script type="text/javascript" src="horse.ply.js"></script>
+<script type="text/javascript" src="teapot.g.js"></script>
+<script type="text/javascript" src="trumpet.obj.js"></script>
+<script type="text/javascript" src="shark.ply.js"></script>
+<script type="text/javascript" src="Torso.vtp.js"></script>
+<script type="text/javascript" src="cow.g.js"></script>
+<script type="text/javascript" src="Armadillo.ply.js"></script>
+<script type="text/javascript" src="42400-IDGH.stl.js"></script>
+<script type="text/javascript" src="doorman.js"></script>
+  <script type="text/javascript" src="BozoShaderDemo.js"></script>
+</body>
+
+</html>

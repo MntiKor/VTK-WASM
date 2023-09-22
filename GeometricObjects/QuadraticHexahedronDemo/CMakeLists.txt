@@ -28,9 +28,9 @@ find_package(VTK
   InteractionWidgets
   RenderingCore
   RenderingFreeType
-  RenderingGL2PSOpenGL2
   RenderingOpenGL2
-)
+REQUIRED)
+
 
 if (NOT VTK_FOUND)
   message("Skipping example: ${VTK_NOT_FOUND_MESSAGE}")

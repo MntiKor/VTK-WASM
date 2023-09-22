@@ -21,7 +21,7 @@
     },
     "ImportPolyDataScene":{
         "args":["ExportBunny.vtp"],
-        "files":["ExportBunny.vtp"]
+        "files":["ExportBunny.vtp", "ExportBunny"]
     },
     "IndividualVRML":{
         "args":["teapot.wrl", "teapot"],
@@ -68,8 +68,8 @@
         "files":["porphyrin.cml"]
     },
     "ReadDICOM":{
-        "args":["prostate.img"],
-        "files":["prostate.img"]
+        "args":["prostate.IMG"],
+        "files":["prostate.IMG"]
     },
     "ReadDICOMSeries":{
         "args":["DicomTestImages"],
@@ -162,5 +162,281 @@
     "VRMLImporterDemo":{
         "args":["grasshop.wrl"],
         "files":["grasshop.wrl"]
+    },
+    "XYPlot":{
+        "args":["combxyz.bin", "combq.bin"],
+        "files":["combxyz.bin", "combq.bin"]
+    },
+    "FitToHeightMap":{
+        "args":["SainteHelens.dem"],
+        "files":["SainteHelens.dem"]
+    },
+    "IdentifyHoles":{
+        "args":["Torso.vtp"],
+        "files":["Torso.vtp"]
+    },
+    "InterpolateFieldDataDemo":{
+        "args":["coarseGrid.e", "fineGrid.e-s002"],
+        "files":["coarseGrid.e", "fineGrid.e-s002"]
+    },
+    "MatrixMathFilter":{
+        "args":["tensors.vtk"],
+        "files":["tensors.vtk"]
+    },
+    "OBBDicer":{
+        "args":["Armadillo.ply", "20"],
+        "files":["Armadillo.ply"]
+    },
+    "PointInterpolator":{
+        "args": ["sparsePoints.txt", "InterpolatingOnSTL_final.stl"],
+        "files": ["sparsePoints.txt", "InterpolatingOnSTL_final.stl"]
+    },
+    "FillHoles":{
+        "args":["Torso.vtp"],
+        "files":["Torso.vtp"]
+    },
+    "FlatVersusGouraud":{
+        "args":["cow.obj"],
+        "files":["cow.obj"]
+    },
+    "Rainbow":{
+        "args":["combxyz.bin", "combq.bin"],
+        "files":["combxyz.bin", "combq.bin"]
+    },
+    "Rotations":{
+        "args":["cow.obj"],
+        "files":["cow.obj"]
+    },
+    "RotationsA":{
+        "args":["cow.obj", "1"],
+        "files":["cow.obj"]
+    },
+    "RotationsB":{
+        "args":["cow.obj", "2"],
+        "files":["cow.obj"]
+    },
+    "RotationsC":{
+        "args":["cow.obj", "3"],
+        "files":["cow.obj"]
+    },
+    "RotationsD":{
+        "args":["cow.obj", "0"],
+        "files":["cow.obj"]
+    },
+    "StripFran":{
+        "args":["fran_cut.vtk"],
+        "files":["fran_cut.vtk"]
+    },
+    "WalkCow":{
+        "args":["cow.g"],
+        "files":["cow.g"]
+    },
+    "WalkCowA":{
+        "args":["cow.g", "1"],
+        "files":["cow.g"]
+    },
+    "WalkCowB":{
+        "args":["cow.g", "2"],
+        "files":["cow.g"]
+    },
+    "BozoShader":{
+        "args":["PerlinNoise.glsl", "horse.ply"],
+        "files":["PerlinNoise.glsl", "horse.ply"]
+    },
+    "BozoShaderDemo":{
+        "args":["PerlinNoise.glsl", "horse.ply", "teapot.g", "trumpet.obj", "shark.ply", "Torso.vtp", "cow.g", "Armadillo.ply", "42400-IDGH.stl", "doorman.obj"],
+        "files":["PerlinNoise.glsl", "horse.ply", "teapot.g", "trumpet.obj", "shark.ply", "Torso.vtp", "cow.g", "Armadillo.ply", "42400-IDGH.stl", "doorman"]
+    },
+    "ColorByNormal":{
+        "args":["Armadillo.ply"],
+        "files":["Armadillo.ply"]
+    },
+    "CubeMap":{
+        "args":["horse.ply", "cube_map"],
+        "files":["horse.ply", "cube_map"]
+    },
+    "MarbleShader":{
+        "args":["PerlinNoise.glsl", "horse.ply", "1,1,1", "10", "2", "1", ".5", "8"],
+        "files":["PerlinNoise.glsl", "horse.ply"]
+    },
+    "MarbleShaderDemo":{
+        "args":["PerlinNoise.glsl", "teapot.g", "1,0,1", "10", "2", "1", ".5", "8"],
+        "files":["PerlinNoise.glsl", "teapot.g"]
+    },
+    "SpatterShader":{
+        "args":["PerlinNoise.glsl", "horse.ply", ".05", "3", ".7,.7,.7", "0,0,0"],
+        "files":["PerlinNoise.glsl", "horse.ply"]
+    },
+    "SphereMap":{
+        "args":["Bunny.vtp", "wintersun.jpg"],
+        "files":["Bunny.vtp", "wintersun.jpg"]
+    },
+    "KDTreeFindPointsWithinRadiusDemo":{
+        "args":["dragon.ply", "10"],
+        "files":["dragon.ply"]
+    },
+    "OctreeFindPointsWithinRadiusDemo":{
+        "args":["dragon.ply", "10"],
+        "files":["dragon.ply"]
+    },
+    "PointLocatorFindPointsWithinRadiusDemo":{
+        "args":["dragon.ply", "10"],
+        "files":["dragon.ply"]
+    },
+    "StaticLocatorFindPointsWithinRadiusDemo":{
+        "args":["dragon.ply", "10"],
+        "files":["dragon.ply"]
+    },
+    "VisualizeKDTree":{
+        "args":["shark.ply"],
+        "files":["shark.ply"]
+    },
+    "LoadESGrid":{
+        "args":["UNISIM-II-D.vtu"],
+        "files":["UNISIM-II-D.vtu"]
+    },
+    "VoxelsOnBoundary":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
+    },
+    "Attenuation":{
+        "args":["AttenuationArtifact.pgm"],
+        "files":["AttenuationArtifact.pgm"]
+    },
+    "EnhanceEdges":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
+    },
+    "GaussianSmooth":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "HybridMedianComparison":{
+        "args":["TestPattern.png"],
+        "files":["TestPattern.png"]
+    },
+    "IdealHighPass":{
+        "args":["fullhead15.png"],
+        "files":["fullhead15.png"]
+    },
+    "IsoSubsample":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
+    },
+    "MedianComparison":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
+    },
+    "MorphologyComparison":{
+        "args":["binary.pgm"],
+        "files":["binary.pgm"]
+    },
+    "Pad":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
+    },
+    "VTKSpectrum":{
+        "args":["vtks.pgm"],
+        "files":["vtks.pgm"]
+    },
+    "CannyEdgeDetector":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "CenterAnImage":{
+        "args":["Ox.jpg"],
+        "files":["Ox.jpg"]
+    },
+    "Colored2DImageFusion":{
+        "args":["Ox.jpg", "Gourds2.jpg"],
+        "files":["Ox.jpg", "Gourds2.jpg"]
+    },
+    "CombineImages":{
+        "args":["Ox.jpg", "Gourds2.jpg"],
+        "files":["Ox.jpg", "Gourds2.jpg"]
+    },
+    "DrawOnAnImage":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ExtractComponents":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ImageAccumulateGreyscale":{
+        "args":["Ox.jpg"],
+        "files":["Ox.jpg"]
+    },
+    "ImageAnisotropicDiffusion2D":{
+        "args":["cake_easy.jpg"],
+        "files":["cake_easy.jpg"]
+    },
+    "ImageCheckerboard":{
+        "args":["Ox.jpg", "Gourds2.jpg"],
+        "files":["Ox.jpg", "Gourds2.jpg"]
+    },
+    "ImageCityBlockDistance":{
+        "args":["Yinyang.jpg"],
+        "files":["Yinyang.jpg"]
+    },
+    "ImageDilateErode3D":{
+        "args":["Yinyang.jpg"],
+        "files":["Yinyang.jpg"]
+    },
+    "ImageHistogram":{
+        "args":["Pileated.jpg"],
+        "files":["Pileated.jpg"]
+    },
+    "ImageHybridMedian2D":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ImageMagnify":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ImageOpenClose3D":{
+        "args":["Yinyang.jpg"],
+        "files":["Yinyang.jpg"]
+    },
+    "ImageRange3D":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "DelimitedTextReader":{
+        "args":["DelimitedData.txt"],
+        "files":["DelimitedData.txt"]
+    },
+    "TreeMapView":{
+        "args":["Infovis-XML-vtkclasses.xml", "Infovis-XML-vtklibrary.xml"],
+        "files":["Infovis-XML-vtkclasses.xml", "Infovis-XML-vtklibrary.xml"]
+    },
+    "WordCloud":{
+        "args":["Gettysburg.txt", "--dpi", "150", "--fontfile", "Canterbury.ttf"],
+        "files":["Gettysburg.txt", "Canterbury.ttf"]
+    },
+    "WordCloudDemo":{
+        "args":["Gettysburg.txt", "--dpi", "150", "--fontfile", "Canterbury.ttf"],
+        "files":["Gettysburg.txt", "Canterbury.ttf"]
+    },
+    "XGMLReader":{
+        "args":["fsm.gml"],
+        "files":["fsm.gml"]
+    },
+    "ImageClip":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ImageRegion":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "GenerateCubesFromLabels":{
+        "args":["frogtissue.mhd", "1", "29"],
+        "files":["frogtissue.mhd"]
+    },
+    "MedicalDemo1":{
+        "args":["FullHead.mhd"],
+        "files":["FullHead.mhd"]
     }
 }

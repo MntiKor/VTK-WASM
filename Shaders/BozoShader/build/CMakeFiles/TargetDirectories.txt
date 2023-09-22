@@ -1,0 +1,3 @@
+/work/BozoShader/build/CMakeFiles/BozoShader.dir
+/work/BozoShader/build/CMakeFiles/edit_cache.dir
+/work/BozoShader/build/CMakeFiles/rebuild_cache.dir
