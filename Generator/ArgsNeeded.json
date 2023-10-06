@@ -36,7 +36,7 @@
         "files":["Gourds.mha"]
     },
     "OBJImporter":{
-        "args":["doorman.obj", "doorman.mtl", "/"],
+        "args":["doorman.obj", "doorman.mtl", "doorman"],
         "files":["doorman"]
     },
     "PNGReader":{
@@ -76,7 +76,7 @@
         "files":["DicomTestImages"]
     },
     "ReadExodusData":{
-        "args":["mug.e", "converted"],
+        "args":["mug.e", "convected"],
         "files":["mug.e"]
     },
     "ReadImageData":{

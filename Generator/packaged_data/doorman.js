@@ -106,6 +106,7 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
       function assert(check, msg) {
         if (!check) throw msg + new Error().stack;
       }
+Module['FS_createPath']("/", "doorman", true, true);
 
       /** @constructor */
       function DataRequest(start, end, audio) {
@@ -173,6 +174,6 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
     }
 
     }
-    loadPackage({"files": [{"filename": "/doorman.mtl", "start": 0, "end": 930}, {"filename": "/doorman.obj", "start": 930, "end": 593020}, {"filename": "/t_doorMan_d.png", "start": 593020, "end": 1246856}, {"filename": "/t_doorMan_n.png", "start": 1246856, "end": 1905115}, {"filename": "/t_doorMan_s.png", "start": 1905115, "end": 2405519}, {"filename": "/t_doorMan_teeth_d.png", "start": 2405519, "end": 2454451}, {"filename": "/t_doorMan_teeth_n.png", "start": 2454451, "end": 2499485}, {"filename": "/t_eye_d.png", "start": 2499485, "end": 2536128}, {"filename": "/t_eye_n.png", "start": 2536128, "end": 2570702}], "remote_package_size": 2570702});
+    loadPackage({"files": [{"filename": "/doorman.mtl", "start": 0, "end": 930}, {"filename": "/doorman.obj", "start": 930, "end": 593020}, {"filename": "/doorman/t_doorMan_d.png", "start": 593020, "end": 1246856}, {"filename": "/doorman/t_doorMan_n.png", "start": 1246856, "end": 1905115}, {"filename": "/doorman/t_doorMan_s.png", "start": 1905115, "end": 2405519}, {"filename": "/doorman/t_doorMan_teeth_d.png", "start": 2405519, "end": 2454451}, {"filename": "/doorman/t_doorMan_teeth_n.png", "start": 2454451, "end": 2499485}, {"filename": "/doorman/t_eye_d.png", "start": 2499485, "end": 2536128}, {"filename": "/doorman/t_eye_n.png", "start": 2536128, "end": 2570702}], "remote_package_size": 2570702});
 
   })();
