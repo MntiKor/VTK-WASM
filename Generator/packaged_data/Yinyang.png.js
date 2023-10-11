@@ -18,8 +18,8 @@
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'packaged_data/frogtissue.mhd.data';
-      var REMOTE_PACKAGE_BASE = 'frogtissue.mhd.data';
+      var PACKAGE_NAME = 'packaged_data/Yinyang.png.data';
+      var REMOTE_PACKAGE_BASE = 'Yinyang.png.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
         err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -149,10 +149,10 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_packaged_data/frogtissue.mhd.data');
+          }          Module['removeRunDependency']('datafile_packaged_data/Yinyang.png.data');
 
       };
-      Module['addRunDependency']('datafile_packaged_data/frogtissue.mhd.data');
+      Module['addRunDependency']('datafile_packaged_data/Yinyang.png.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};
 
@@ -173,6 +173,6 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
     }
 
     }
-    loadPackage({"files": [{"filename": "/frogtissue.mhd", "start": 0, "end": 309}], "remote_package_size": 309});
+    loadPackage({"files": [{"filename": "/Yinyang.png", "start": 0, "end": 1917}], "remote_package_size": 1917});
 
   })();

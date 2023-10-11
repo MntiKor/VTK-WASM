@@ -27,7 +27,7 @@ aws s3api put-object \
     --bucket vtk-wasm-examples \
     --key ${example_name}/${example_name}.wasm \
     --body ${example_name}.wasm \
-    --content-type application/wasm
+    --content-type application/wasm \
     --acl public-read
 
 popd

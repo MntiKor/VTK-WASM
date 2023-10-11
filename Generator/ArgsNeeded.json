@@ -179,6 +179,22 @@
         "args":["coarseGrid.e", "fineGrid.e-s002"],
         "files":["coarseGrid.e", "fineGrid.e-s002"]
     },
+    "QuadricClustering":{
+        "args":["Torso.vtp"],
+        "files":["Torso.vtp"]
+    },
+    "QuadricDecimation":{
+        "args":["Torso.vtp"],
+        "files":["Torso.vtp"]
+    },
+    "SplitPolyData":{
+        "args":["cowHead.vtp"],
+        "files":["cowHead.vtp"]
+    },
+    "SubdivisionDemo":{
+        "args":["footbones.ply", "20"],
+        "files":["footbones.ply"]
+    },
     "MatrixMathFilter":{
         "args":["tensors.vtk"],
         "files":["tensors.vtk"]
@@ -198,6 +214,14 @@
     "FlatVersusGouraud":{
         "args":["cow.obj"],
         "files":["cow.obj"]
+    },
+    "HiddenLineRemoval":{
+        "args":["cow.obj"],
+        "files":["cow.obj"]
+    },
+    "InterpolateCamera":{
+        "args":["spider.ply"],
+        "files":["spider.ply"]
     },
     "Rainbow":{
         "args":["combxyz.bin", "combq.bin"],
@@ -388,8 +412,8 @@
         "files":["Yinyang.jpg"]
     },
     "ImageDilateErode3D":{
-        "args":["Yinyang.jpg"],
-        "files":["Yinyang.jpg"]
+        "args":["Yinyang.png"],
+        "files":["Yinyang.png"]
     },
     "ImageHistogram":{
         "args":["Pileated.jpg"],
@@ -404,10 +428,66 @@
         "files":["Gourds.png"]
     },
     "ImageOpenClose3D":{
-        "args":["Yinyang.jpg"],
-        "files":["Yinyang.jpg"]
+        "args":["Yinyang.png"],
+        "files":["Yinyang.png"]
     },
     "ImageRange3D":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ImageRotate":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ImageSeparableConvolution":{
+        "args":["Yinyang.png"],
+        "files":["Yinyang.png"]
+    },
+    "ImageToPolyDataFilter":{
+        "args":["Gourds.png"],
+        "files":["Gourds.png"]
+    },
+    "ImageWarp":{
+        "args":["masonry.bmp"],
+        "files":["masonry.bmp"]
+    },
+    "InteractWithImage":{
+        "args":["Ox.jpg"],
+        "files":["Ox.jpg"]
+    },
+    "PickPixel":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "PickPixel2":{
+        "args":["ColorCells.tif"],
+        "files":["ColorCells.tif"]
+    },
+    "RGBToHSI":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "RGBToHSV":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "RGBToYIQ":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ResizeImage":{
+        "args":["Gourds2.jpg"],
+        "files":["Gourds2.jpg"]
+    },
+    "ResizeImageDemo":{
+        "args":["Pileated.jpg"],
+        "files":["Pileated.jpg"]
+    },
+    "StaticImage":{
+        "args":["Ox.jpg"],
+        "files":["Ox.jpg"]
+    },
+    "Transparency":{
         "args":["Gourds2.jpg"],
         "files":["Gourds2.jpg"]
     },
@@ -441,7 +521,7 @@
     },
     "GenerateCubesFromLabels":{
         "args":["frogtissue.mhd", "1", "29"],
-        "files":["frogtissue.mhd"]
+        "files":["frogtissue"]
     },
     "MedicalDemo1":{
         "args":["FullHead.mhd"],
@@ -540,24 +620,24 @@
         "files":["Armadillo.ply"]
     },
     "AlignTwoPolyDatas":{
-        "args":["Grey_Nurse_Sark.stl", "greatWhite.stl"],
-        "files":["Grey_Nurse_Sark.stl", "greatWhite.stl"]
+        "args":["Grey_Nurse_Shark.stl", "greatWhite.stl"],
+        "files":["Grey_Nurse_Shark.stl", "greatWhite.stl"]
     },
     "BooleanOperationPolyDataFilter":{
-        "args":["ObliqueCone.vtp", "intersection", "Torso.vtp"],
+        "args":["Torso.vtp", "difference", "ObliqueCone.vtp"],
         "files":["ObliqueCone.vtp", "Torso.vtp"]
     },
     "CellCentersDemo":{
         "args":["cow.g"],
         "files":["cow.g"]
     },
-    "CellInsideObject":{
-        "args":["cow.g", "cow.g"],
+    "CellsInsideObject":{
+        "args":["cow.g"],
         "files":["cow.g"]
     },
     "ColorDisconnectedRegionsDemo":{
-        "args":["Torso.vtp"],
-        "files":["Torso.vtp"]
+        "args":["footbones.ply"],
+        "files":["footbones.ply"]
     },
     "CombineImportedActors":{
         "args":["iflamingo.3ds"],
@@ -596,7 +676,7 @@
         "files":["Bunny.vtp"]
     },
     "LoopBooleanPolyDataFilter":{
-        "args":["ObliqueCone.vtp", "intersection", "Torso.vtp"],
+        "args":["Torso.vtp", "difference", "ObliqueCone.vtp"],
         "files":["ObliqueCone.vtp", "Torso.vtp"]
     },
     "PolyDataIsoLines":{
@@ -615,7 +695,7 @@
         "args":["cowHead.vtp"],
         "files":["cowHead.vtp"]
     },
-    "ThinPlaneSplineTransform":{
+    "ThinPlateSplineTransform":{
         "args":["masonry.bmp"],
         "files":["masonry.bmp"]
     },
@@ -729,11 +809,11 @@
     },
     "FrogBrain":{
         "args":["frogtissue.mhd", "brain"],
-        "files":["frogtissue.mhd"]
+        "files":["frogtissue"]
     },
     "FrogSlice":{
         "args":["frog.mhd", "frogtissue.mhd"],
-        "files":["frog.mhd", "frogtissue.mhd"]
+        "files":["frog.mhd", "frogtissue"]
     },
     "FroggieSurface":{
         "args":["frog_mhd.json"],
@@ -1034,5 +1114,13 @@
     "SurfaceFromUnorganizedPointsWithPostProc":{
         "args":["Bunny.vtp"],
         "files":["Bunny.vtp"]
+    },
+    "EllipticalButton":{
+        "args":["Yinyang.png"],
+        "files":["Yinyang.png"]
+    },
+    "HighlightSelection":{
+        "args":["cow.vtp"],
+        "files":["cow.vtp"]
     }
 }

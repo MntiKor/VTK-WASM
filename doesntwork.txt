@@ -19,10 +19,53 @@ ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-u
 ReadLegacyUnstructuredGrid: Error: no override found for 'vtkContextDevice2D'
 
 - ImageData:
-ImageDataGeometryFilter, ImageNormalize, ImageWeightedSum: no error but bad render
+ImageDataGeometryFilter, ImageNormalize, ImageWeightedSum: no error but render inaccurate with the screenshot
+
+- Images:
+BackgroundImage: Background render broken
+CombineImages: Error: GLctx is undefined
+CombiningRGBChannels, ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper, ImageSobel2D, ResizeImage: no error but render inaccurate with the screenshot
+ImageWarp: work well but console full of warnings
+RGBToYIQ: error YIQ color space requires negative numbers
+
+- InfoVis:
+DelimitedTextReader: uncaught exception 1587448
+MutableGraphHelper: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
+
+- Interaction:
+UserEvent: does not compile: vtkTestFilter.h file not found
+
+- Medical:
+MedicalDemo4: vtkTextureObject: failed to determine texture parameters
 
 - Meshes:
-Subdivision: little glitch, middle sphere isn't actually a sphere
+PointInterpolator: uncaught exception 1584136
+SubdivisionDemo: error:Unable to allocate 51658752 elements of size 4 bytes (probably fixed with -s TOTAL_MEMORY=1024MB)
+
+- Modelling:
+MarchingCubes: no error but render inaccurate with the screenshot
+
+- Picking:
+HighlightSelectedPoints: selection is "all or nothing", unable to select a portion of the points
+
+- Plotting:
+AreaPlot, BarChart, BoxChart, ChartMatrix, FunctionalBagPlot, Histogram2D, LinePlot, ParallelCoordinates, PieChart, PlotLine3D, ScatterPlot, StackedBar, StackedPlot, SurfacePlot: Error: no override found for 'vtkContextDevice2D'
+ChartOn3DScene, Diagram, MultiplePlots: indirect call to null
+
+- Points:
+CompareExtractSurface, PoissonExtractSurface: does not compile: vtkPoissonReconstruction.h file not found
+DensifyPoints, ExtractSurface, ExtractSurfaceDemo, NormalEstimation, SignedDistance, UnsignedDistance: error: indirect call to signature mismatch
+ExtractEnclosedPoints: works but error in console: vtkMultiThreader unable to create a thread
+PowercrustExtractSurface: does not compile: vtkPowerCrustSurfaceReconstruction.h file not found
+
+- PolyData:
+PointLocatorDemo: no error but interactions don't work
+
+- Qt:
+Still unable to build Qt for wasm
+
+- Remote:
+Still not tested
 
 - Rendering:
 InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
@@ -32,16 +75,6 @@ PBR*: missing package (vtk_cli11)
 RotationsA,B,C,D: missing Rotations.cxx
 WalkCowA,B: missing WalkCow.cxx
 SpecularSpheres: low framerate
-
-- Graphs:
-AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
-BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
-SideBySideGraphs: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
-
-- Images:
-BackgroundImage: Background render broken
-ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper: no error but bad render
-ImageFFT, ImageRFFT: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
 
  - Shaders:
  BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
