@@ -1,3 +1,0 @@
-/work/MarbleShader/build/CMakeFiles/MarbleShader.dir
-/work/MarbleShader/build/CMakeFiles/edit_cache.dir
-/work/MarbleShader/build/CMakeFiles/rebuild_cache.dir

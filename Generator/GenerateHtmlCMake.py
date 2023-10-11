@@ -55,11 +55,8 @@ def GenerateExampleArgs(example_name, source_path, dest_path, vtk_source_path, a
     data = data.replace('YYY', '\', \''.join(module_arguments))
 
     script_lines = []
-    os.makedirs(os.path.join(dest_path, 'data'), exist_ok=True);
     for file in args_data.get('files'):
-        script_lines.append('<script type="text/javascript" src="' + file + '.js"></script>')
-        for imported_file in glob.glob(r'packaged_data/' + file + '.*'):
-            shutil.copy(imported_file, os.path.join(dest_path, 'data'))
+        script_lines.append('<script type="text/javascript" src="https://vtk-wasm-examples.s3.fr-par.scw.cloud/data/' + file + '.js"></script>')
     data = data.replace('ZZZ', '\n'.join(script_lines))
 
     with open(os.path.join(dest_path, 'index.html'), 'w') as index:

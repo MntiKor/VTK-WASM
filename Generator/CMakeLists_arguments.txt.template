@@ -167,6 +167,5 @@ add_custom_command(
   COMMAND
     ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
-      "${CMAKE_CURRENT_SOURCE_DIR}/data/*"
       $<TARGET_FILE_DIR:XXX>
 )

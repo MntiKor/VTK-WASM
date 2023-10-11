@@ -291,13 +291,21 @@
         "args":["shark.ply"],
         "files":["shark.ply"]
     },
+    "VisualizeModifiedBSPTree":{
+        "args":["shark.ply"],
+        "files":["shark.ply"]
+    },
+    "VisualizeOBBTree":{
+        "args":["shark.ply"],
+        "files":["shark.ply"]
+    },
     "LoadESGrid":{
         "args":["UNISIM-II-D.vtu"],
         "files":["UNISIM-II-D.vtu"]
     },
     "VoxelsOnBoundary":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "Attenuation":{
         "args":["AttenuationArtifact.pgm"],
@@ -305,7 +313,7 @@
     },
     "EnhanceEdges":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "GaussianSmooth":{
         "args":["Gourds.png"],
@@ -321,11 +329,11 @@
     },
     "IsoSubsample":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "MedianComparison":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "MorphologyComparison":{
         "args":["binary.pgm"],
@@ -333,7 +341,7 @@
     },
     "Pad":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "VTKSpectrum":{
         "args":["vtks.pgm"],
@@ -437,23 +445,23 @@
     },
     "MedicalDemo1":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "MedicalDemo2":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "MedicalDemo3":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "MedicalDemo4":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "TissueLens":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "ContourTriangulator":{
         "args":["fullhead15.png", "500"],
@@ -513,7 +521,7 @@
     },
     "MaskPointsFilter":{
         "args":["FullHead.mhd", "1100"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "PointOccupancy":{
         "args":["cowHead.vtp"],
@@ -713,7 +721,7 @@
     },
     "EdgePoints":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "FontFile":{
         "args":["CopyPaste.ttf"],
@@ -857,15 +865,15 @@
     },
     "FlyingHeadSlice":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "HeadBone":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "HeadSlice":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "Hello":{
         "args":["hello.vtk"],
@@ -873,7 +881,7 @@
     },
     "ImageGradient":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "IronIsoSurface":{
         "args":["ironProt.vtk"],
@@ -969,7 +977,7 @@
     },
     "FixedPointVolumeRayCastMapperCT":{
         "args":["FullHead.mhd"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "IntermixedUnstructuredGrid":{
         "args":["ironProt.vtk", "neghip.slc"],
@@ -985,7 +993,7 @@
     },
     "RayCastIsosurface":{
         "args":["FullHead.mhd", "500", "1150"],
-        "files":["FullHead.mhd"]
+        "files":["FullHead"]
     },
     "SimpleRayCast":{
         "args":["ironProt.vtk"],
@@ -1014,5 +1022,17 @@
     "ScalarBarWidget":{
         "args":["uGridEx.vtk"],
         "files":["uGridEx.vtk"]
+    },
+    "DataStructureComparison":{
+        "args":["Bunny.vtp"],
+        "files":["Bunny.vtp"]
+    },
+    "SurfaceFromUnorganizedPoints":{
+        "args":["Bunny.vtp"],
+        "files":["Bunny.vtp"]
+    },
+    "SurfaceFromUnorganizedPointsWithPostProc":{
+        "args":["Bunny.vtp"],
+        "files":["Bunny.vtp"]
     }
 }

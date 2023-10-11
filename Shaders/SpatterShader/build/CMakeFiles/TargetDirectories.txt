@@ -1,3 +1,0 @@
-/work/SpatterShader/build/CMakeFiles/SpatterShader.dir
-/work/SpatterShader/build/CMakeFiles/edit_cache.dir
-/work/SpatterShader/build/CMakeFiles/rebuild_cache.dir

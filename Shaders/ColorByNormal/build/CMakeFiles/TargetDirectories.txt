@@ -1,3 +1,0 @@
-/work/ColorByNormal/build/CMakeFiles/ColorByNormal.dir
-/work/ColorByNormal/build/CMakeFiles/edit_cache.dir
-/work/ColorByNormal/build/CMakeFiles/rebuild_cache.dir

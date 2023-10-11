@@ -43,6 +43,11 @@
         canvas.setAttribute('tabindex', '0');
         // grab focus when the render window region receives mouse clicks.
         canvas.addEventListener('click', () => canvas.focus());
+      },
+      'locateFile': function (path, prefix) {
+        if (path.endsWith(".data")) return "https://vtk-wasm-examples.s3.fr-par.scw.cloud/data/" + path;
+
+        return prefix + path;
       }
     };
 

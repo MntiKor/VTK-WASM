@@ -1,10 +1,25 @@
+- DataStructures:
+KDTreeTimingDemo, ModifiedBSPTreeTimingDemo, OBBTreeTimingDemo, OctreeTimingDemo: Error: no override found for 'vtkContextDevice2D'
+VisualizeKDTree: KdTree seems broken
+
 - Filtering:
-GenericClip: does not compile (missing module TestingGenericBridge)
+GenericClip: requires to build vtk with ENABLE_TESTING on, which requires ENABLE_sqlite
 
 - GeometricObjects:
 LinearCellDemo, ParametricObjectsDemo: does not compile (vtk_cli11.h missing)
-IsoparametricCellsDemo: WebGL warning (blitFrameBuffer)
 OpenVR*: do I have to explain why ?
+
+- Graphs:
+AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
+BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
+
+- IO:
+OBJImporter: Index out of bounds (looks like SDL issue)
+ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-use in the frag shader, but is undeclared in the vert shader
+ReadLegacyUnstructuredGrid: Error: no override found for 'vtkContextDevice2D'
+
+- ImageData:
+ImageDataGeometryFilter, ImageNormalize, ImageWeightedSum: no error but bad render
 
 - Meshes:
 Subdivision: little glitch, middle sphere isn't actually a sphere
@@ -18,18 +33,10 @@ RotationsA,B,C,D: missing Rotations.cxx
 WalkCowA,B: missing WalkCow.cxx
 SpecularSpheres: low framerate
 
-- DataStructures:
-DataStructureComparison: warning: vtkMath::Jacobi: error extracting eigenfunctions
-KDTreeTimingDemo, ModifiedBSPTreeTimingDemo, OBBTreeTimingDemo, OctreeTimingDemo: Error: no override found for 'vtkContextDevice2D'
-VisualizeModifiedBSPTree, VisualizeOBBTree: WebGL warning: blitFrameBuffer: depth buffer format must match if selected
-
 - Graphs:
 AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
 BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
 SideBySideGraphs: WebGL warning: blitFrameBuffer: if the source is multisampled, then the source and dest regions must match exactly
-
-- ImageData:
-ImageDataGeometryFilter, ImageIteratorDemo, ImageNormalize, ImageTranslateExtent, ImageWeightedSum: no error but bad render
 
 - Images:
 BackgroundImage: Background render broken
@@ -39,9 +46,3 @@ ImageFFT, ImageRFFT: WebGL warning: blitFrameBuffer: if the source is multisampl
  - Shaders:
  BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
 
-- IO:
-ReadExodusData: missing package (IOExodus)
-ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-use in the frag shader, but is undeclared in the vert shader
-ReadLegacyUnstructuredGrid: Error: no override found for 'vtkContextDevice2D'
-ImportPolyDataScene: could not compile vtkShaderProgram
-ImportOBJ: Index out of bounds
