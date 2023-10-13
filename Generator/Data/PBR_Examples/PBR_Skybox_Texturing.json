@@ -1,0 +1,24 @@
+{
+  "title": "Parameters for PBR_Skybox_Texturing",
+  "object": "Boy",
+  "bkgcolor": "MidnightBlue",
+  "objcolor": "Seashell",
+  "skybox": true,
+  "cubemap": {
+    "root": "./Skyboxes/skybox1",
+    "files": [
+      "skybox-px.jpg",
+      "skybox-nx.jpg",
+      "skybox-py.jpg",
+      "skybox-ny.jpg",
+      "skybox-pz.jpg",
+      "skybox-nz.jpg"
+    ]
+  },
+  "equirectangular": "./Skyboxes/spiaggia_di_mondello_4k.hdr",
+  "xequirectangular": "./Skyboxes/skybox1/skybox.jpg",
+  "albedo": "./Textures/Isotropic/vtk_Base_Color.png",
+  "normal": "./Textures/Isotropic/vtk_Normal.png",
+  "material": "./Textures/Isotropic/vtk_Material.png",
+  "emissive": "./Textures/Isotropic/vtk_dark_bkg.png"
+}

@@ -223,6 +223,50 @@
         "args":["spider.ply"],
         "files":["spider.ply"]
     },
+    "MotionBlur":{
+        "args":["Armadillo.ply"],
+        "files":["Armadillo.ply"]
+    },
+    "PBR_Anisotropy":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Clear_Coat":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Edge_Tint":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_HDR_Environment":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Mapping":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Materials":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Materials_Coat":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Skybox":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Skybox_Anisotropy":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
+    "PBR_Skybox_Texturing":{
+        "args":["PBR_Parameters.json"],
+        "files":["PBR_Examples"]
+    },
     "Rainbow":{
         "args":["combxyz.bin", "combq.bin"],
         "files":["combxyz.bin", "combq.bin"]
@@ -246,6 +290,10 @@
     "RotationsD":{
         "args":["cow.obj", "0"],
         "files":["cow.obj"]
+    },
+    "Shadows":{
+        "args":["dragon.ply"],
+        "files":["dragon.ply"]
     },
     "StripFran":{
         "args":["fran_cut.vtk"],
@@ -715,6 +763,10 @@
         "args":["fran_cut.vtk", "fran_cut.png"],
         "files":["fran_cut.vtk", "fran_cut.png"]
     },
+    "TextureCutSphere":{
+        "args":["texThres2.vtk"],
+        "files":["texThres2.vtk"]
+    },
     "TexturePlane":{
         "args":["masonry.bmp"],
         "files":["masonry.bmp"]
@@ -764,14 +816,14 @@
         "files":["v.vtk", "t.vtk", "k.vtk"]
     },
     "Blow":{
-        "args":["Blow.vtk"],
-        "files":["Blow.vtk"]
+        "args":["blow.vtk"],
+        "files":["blow.vtk"]
     },
-    "BloxClipStructuredPoints":{
+    "BoxClipStructuredPoints":{
         "args":["HeadMRVolume.mhd"],
-        "files":["HeadMRVolume.mhd"]
+        "files":["HeadMRVolume"]
     },
-    "BloxClipUnstructuredGrid":{
+    "BoxClipUnstructuredGrid":{
         "args":["hexa.vtk"],
         "files":["hexa.vtk"]
     },
@@ -793,7 +845,7 @@
     },
     "CurvedReformation":{
         "args":["HeadMRVolume.mhd", "polyline.vtk", "200"],
-        "files":["HeadMRVolume.mhd", "polyline.vtk"]
+        "files":["HeadMRVolume"]
     },
     "DepthSortPolyData":{
         "args":["1", "100", "100", "1"],
@@ -813,15 +865,15 @@
     },
     "FrogSlice":{
         "args":["frog.mhd", "frogtissue.mhd"],
-        "files":["frog.mhd", "frogtissue"]
+        "files":["frog", "frogtissue"]
     },
     "FroggieSurface":{
-        "args":["frog_mhd.json"],
-        "files":["frog_mhd.json", "Frog"]
+        "args":["Frog_mhd.json"],
+        "files":["Frog_mhd.json", "Frog"]
     },
     "FroggieView":{
-        "args":["frog_vtk.json"],
-        "files":["frog_vtk.json", "Frog"]
+        "args":["Frog_vtk.json"],
+        "files":["Frog_vtk.json", "Frog"]
     },
     "Glyph3DImage":{
         "args":["emote.jpg"],

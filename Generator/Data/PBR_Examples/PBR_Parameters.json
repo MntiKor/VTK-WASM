@@ -1,0 +1,22 @@
+{
+  "title": "Parameters for the PBR Examples",
+  "skybox": true,
+  "cubemap": {
+    "root": "./Skyboxes/skybox2",
+    "files": [
+      "posx.jpg",
+      "negx.jpg",
+      "posy.jpg",
+      "negy.jpg",
+      "posz.jpg",
+      "negz.jpg"
+    ]
+  },
+  "equirectangular": "./Skyboxes/spiaggia_di_mondello_4k.hdr",
+  "xequirectangular": "./Skyboxes/spiaggia_di_mondello_1k.hdr",
+  "xequirectangular": "./Skyboxes/skybox2/skybox.jpg",
+  "albedo": "./Textures/Isotropic/vtk_Base_Color.png",
+  "normal": "./Textures/Isotropic/vtk_Normal.png",
+  "material": "./Textures/Isotropic/vtk_Material.png",
+  "anisotropy": "./Textures/Anisotropic/vtk_Anisotropy.png"
+}

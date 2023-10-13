@@ -129,7 +129,6 @@ RestoreSceneFromFieldData
 RestoreSceneFromFile
 SaveSceneToFieldData
 SaveSceneToFile
-ViewportBorders
 Description
 GetLinearPointId
 StructuredPointsToUnstructuredGrid
@@ -228,3 +227,9 @@ ExodusIIWriter
 MergePoints
 PolyDataCellNormals
 PolyDataRIB
+Tutorial_Step1
+Tutorial_Step2
+Tutorial_Step3
+Tutorial_Step4
+Tutorial_Step5
+Tutorial_Step6

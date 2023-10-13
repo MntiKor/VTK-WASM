@@ -1,0 +1,24 @@
+{
+  "title": "Parameters for PBR_Skybox_Anisotropy",
+  "object": "Boy",
+  "bkgcolor": "MidnightBlue",
+  "objcolor": "Seashell",
+  "skybox": true,
+  "cubemap": {
+    "root": "./Skyboxes/skybox0",
+    "files": [
+      "right.jpg",
+      "left.jpg",
+      "top.jpg",
+      "bottom.jpg",
+      "front.jpg",
+      "back.jpg"
+    ]
+  },
+  "equirectangular": "./Skyboxes/spiaggia_di_mondello_4k.hdr",
+  "xequirectangular": "./Skyboxes/skybox0/skybox.jpg",
+  "albedo": "./Textures/Anisotropic/CarbonFiberAniso_albedo.png",
+  "normal": "./Textures/Anisotropic/CarbonFiberAniso_normal.png",
+  "material": "./Textures/Anisotropic/CarbonFiberAniso_orm.png",
+  "anisotropy": "./Textures/Anisotropic/CarbonFiberAniso_anisotropyAngle.png"
+}

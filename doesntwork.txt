@@ -69,13 +69,49 @@ Still not tested
 
 - Rendering:
 InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
-Model: only one of the 2 RenderWindow shows, and its interactor is broken
-MotionBlur, OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
-PBR*: missing package (vtk_cli11)
+Model: interactor is broken
+MotionBlur: render only shows the first frame
+OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
+PBR*: needs Boost -> shader does not compile
+Rotations: Background doesn't show
 RotationsA,B,C,D: missing Rotations.cxx
+Shadows: Error: indirect call to signature mismatch
 WalkCowA,B: missing WalkCow.cxx
 SpecularSpheres: low framerate
 
- - Shaders:
- BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
+- Shaders:
+BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
 
+- StructuredGrid:
+BlankPoint: result unaccurate with screenshot
+
+- Texture:
+AnimateVectors: Animation not working
+TextureCutSphere: indirect call to null
+
+- Utilities:
+FullScreen: useless
+
+- Visualization:
+BoxClipStructuredPoints, BoxClipUnstructuredGrid, CurvedReformation, FrogSlice: Error: indirect call signature mismatch
+ChooseTextColorDemo: no text shown
+CorrectlyRenderTranslucentGeometry: works but Error: Built in Dual Depth Peeling is not supported on ES3
+EdgePoints: doesn't show the edges
+ExtrudePolyDataAlongLine: does not compile: vtkFrenetSerretFrame.h not found
+FrogBrain: Error: indirect call to null
+FroggieSurface: needs Boost -> WebGL2RenderingContext.bufferData: Argument 2 can't be an ArrayBuffer or an ArrayBufferView larger than 2 GB
+
+
+to use boost:
+
+list(APPEND emscripten_link_options
+  "SHELL:-s WASM=1"
+  "SHELL:-s ALLOW_MEMORY_GROWTH=1"
+  "SHELL:-s FORCE_FILESYSTEM"
+  "SHELL:-s USE_BOOST_HEADERS=1"
+)
+
+list(APPEND emscripten_compile_options
+  "SHELL:-s USE_BOOST_HEADERS=1"
+  "SHELL:-std=c++17"
+)

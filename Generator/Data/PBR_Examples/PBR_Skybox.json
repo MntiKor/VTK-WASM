@@ -1,0 +1,20 @@
+{
+  "title": "Parameters for PBR_Skybox",
+  "object": "Boy",
+  "bkgcolor": "MidnightBlue",
+  "objcolor": "Seashell",
+  "skybox": true,
+  "cubemap": {
+    "root": "./Skyboxes/skybox2",
+    "files": [
+      "posx.jpg",
+      "negx.jpg",
+      "posy.jpg",
+      "negy.jpg",
+      "posz.jpg",
+      "negz.jpg"
+    ]
+  },
+  "equirectangular": "./Skyboxes/spiaggia_di_mondello_4k.hdr",
+  "xequirectangular": "./Skyboxes/skybox2/skybox.jpg"
+}
