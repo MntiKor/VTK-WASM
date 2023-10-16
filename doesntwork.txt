@@ -72,10 +72,10 @@ InterpolateCamera: way too much load, browser freezes for 2-3 min before render 
 Model: interactor is broken
 MotionBlur: render only shows the first frame
 OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
-PBR*: needs Boost -> shader does not compile
+PBR*: needs C++17 -> shader does not compile
 Rotations: Background doesn't show
 RotationsA,B,C,D: missing Rotations.cxx
-Shadows: Error: indirect call to signature mismatch
+Shadows, GradientBackground: Error: indirect call to signature mismatch
 WalkCowA,B: missing WalkCow.cxx
 SpecularSpheres: low framerate
 
@@ -98,20 +98,32 @@ ChooseTextColorDemo: no text shown
 CorrectlyRenderTranslucentGeometry: works but Error: Built in Dual Depth Peeling is not supported on ES3
 EdgePoints: doesn't show the edges
 ExtrudePolyDataAlongLine: does not compile: vtkFrenetSerretFrame.h not found
-FrogBrain: Error: indirect call to null
-FroggieSurface: needs Boost -> WebGL2RenderingContext.bufferData: Argument 2 can't be an ArrayBuffer or an ArrayBufferView larger than 2 GB
+FrogBrain, RandomProbe: Error: indirect call to null
+FroggieSurface: needs C++17 -> WebGL2RenderingContext.bufferData: Argument 2 can't be an ArrayBuffer or an ArrayBufferView larger than 2 GB
+FroggieView: needs C++17 -> indirect call to null
+Glyph3DImage: no render
+HanoiInitial, HanoiIntermediate: Hanoi.cxx file not found
+RenderLargeImage: pressing 'e' or 'q' still breaks the canvas
 
+- VisualizationAlgorithms:
+FlyingHeadSlice, HeadBone, HeadSlice, ImageGradient: Error: indirect call to null
+LOx, LOxGrid, LOxSeeds: either no render or loading time too long
+MarchingCasesA,B,C,D: MarchingCases.cxx file not found
+OfficeA: Office.cxx file not found
+OfficeTube: Indirect call to signature Mismatch
+PineRootConnectivityA: PineRootConnectivity.cxx file not found
 
-to use boost:
+- VolumeRendering:
+FixedPointVolumeRayCastMapperCT: indirect call to signature mismatch
+IntermixedUnstructuredGrid: Error: index out of bounds
+MinIntensityRendering, SimpleRayCast: Failed to determine texture parameters
+RayCastIsosurface: shader failed to compile
 
-list(APPEND emscripten_link_options
-  "SHELL:-s WASM=1"
-  "SHELL:-s ALLOW_MEMORY_GROWTH=1"
-  "SHELL:-s FORCE_FILESYSTEM"
-  "SHELL:-s USE_BOOST_HEADERS=1"
-)
+- Widgets:
+SeedWidgetImage: image rendering broken
+
+to use C++17:
 
 list(APPEND emscripten_compile_options
-  "SHELL:-s USE_BOOST_HEADERS=1"
   "SHELL:-std=c++17"
 )

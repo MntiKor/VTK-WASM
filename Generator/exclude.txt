@@ -169,7 +169,7 @@ PiecewiseFunction
 PointInPolygon
 ReportRenderWindowCapabilities
 Screenshot
-ShallowCopy
+SshallowCopy
 SortDataArray
 SparseArray
 TimeStamp
@@ -233,3 +233,4 @@ Tutorial_Step3
 Tutorial_Step4
 Tutorial_Step5
 Tutorial_Step6
+NamedColorPatches

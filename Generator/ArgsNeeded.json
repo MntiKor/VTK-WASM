@@ -1027,7 +1027,7 @@
         "args":["postxyz.bin", "postq.bin"],
         "files":["postxyz.bin", "postq.bin"]
     },
-    "LOxSeed":{
+    "LOxSeeds":{
         "args":["postxyz.bin", "postq.bin"],
         "files":["postxyz.bin", "postq.bin"]
     },
@@ -1108,7 +1108,7 @@
         "files":["combxyz.bin", "combq.bin"]
     },
     "FixedPointVolumeRayCastMapperCT":{
-        "args":["FullHead.mhd"],
+        "args":["-MHA", "FullHead.mhd"],
         "files":["FullHead"]
     },
     "IntermixedUnstructuredGrid":{

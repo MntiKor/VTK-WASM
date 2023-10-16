@@ -61,6 +61,8 @@ Requires_Cxx_Version(PBR_Mapping ${CXX_VERSION_MIN} ALL_FILES)
 Requires_Cxx_Version(PBR_Materials ${CXX_VERSION_MIN} ALL_FILES)
 Requires_Cxx_Version(PBR_Materials_Coat ${CXX_VERSION_MIN} ALL_FILES)
 
+Requires_Cxx_Version(GradientBackground ${CXX_VERSION_MIN} ALL_FILES)
+
 include(${WikiExamples_SOURCE_DIR}/CMake/RequiresModule.cmake)
 Requires_Module(PBR_Skybox cli11)
 Requires_Module(PBR_Skybox_Texturing cli11)
@@ -86,6 +88,8 @@ Requires_Module(PBR_Mapping jsoncpp)
 Requires_Module(PBR_Materials jsoncpp)
 Requires_Module(PBR_Materials_Coat jsoncpp)
 
+Requires_Module(GradientBackground cli11)
+
 
 foreach(SOURCE_FILE ${ALL_FILES})
   string(REPLACE ".cxx" "" TMP ${SOURCE_FILE})
@@ -103,6 +107,7 @@ if (BUILD_TESTING)
   set(KIT Rendering)
   set(NEEDS_ARGS
     FlatVersusGouraud
+    GradientBackground
     HiddenLineRemoval
     InterpolateCamera
     MotionBlur
@@ -134,6 +139,9 @@ if (BUILD_TESTING)
 
   add_test(${KIT}-FlatVersusGouraud ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
     TestFlatVersusGouraud ${DATA}/cow.obj)
+
+  add_test(${KIT}-GradientBackground ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
+    TestGradientBackground ${DATA}/star-wars-vader-tie-fighter.obj)
 
   add_test(${KIT}-HiddenLineRemoval ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
     TestHiddenLineRemoval ${DATA}/cow.obj)
