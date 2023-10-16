@@ -26,20 +26,23 @@ def GenerateExample(example_name, source_path, dest_path, vtk_source_path):
         data = cmake.read()
     data = data.replace('XXX', example_name)
     try:
-        process = subprocess.run('python3 WhatModulesVTK.py ' + vtk_source_path + ' ' + source_path, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.run('python3 WhatModulesVTK.py ' + vtk_source_path + ' ' + source_path, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = process.stdout.decode('utf-8')
     except subprocess.CalledProcessError as err:
         print('ERROR:', err)
-        if process.returncode != 0:
-            print('returncode:', process.returncode)
+        if err.returncode != 0:
+            print('returncode:', err.returncode)
             print('Have {} bytes in stdout:\n{}'.format(
-                len(process.stdout),
-                process.stdout.decode('utf-8'))
-                    )
+                    len(err.stdout),
+                    err.stdout.decode('utf-8'))
+                        )
             print('Have {} bytes in stderr:\n{}'.format(
-                len(process.stderr),
-                process.stderr.decode('utf-8'))
-                    )
-    result = process.stdout.decode('utf-8')
+                    len(err.stderr),
+                    err.stderr.decode('utf-8'))
+                        )
+        result = f"# The following error occurred running {err.cmd}\n"
+        for line in err.stderr.decode('utf-8').split('\n'):
+            result += f"# {line}\n"
     data = data.replace('ZZZ', result)
     with open(os.path.join(dest_path, 'CMakeLists.txt'), 'w') as cmake:
         cmake.write(data)
@@ -67,19 +70,22 @@ def GenerateExampleArgs(example_name, source_path, dest_path, vtk_source_path, a
     data = data.replace('XXX', example_name)
     try:
         process = subprocess.run('python3 WhatModulesVTK.py ' + vtk_source_path + ' ' + source_path, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = process.stdout.decode('utf-8')
     except subprocess.CalledProcessError as err:
         print('ERROR:', err)
-        if process.returncode != 0:
-            print('returncode:', process.returncode)
+        if err.returncode != 0:
+            print('returncode:', err.returncode)
             print('Have {} bytes in stdout:\n{}'.format(
-                    len(process.stdout),
-                    process.stdout.decode('utf-8'))
+                    len(err.stdout),
+                    err.stdout.decode('utf-8'))
                         )
             print('Have {} bytes in stderr:\n{}'.format(
-                    len(process.stderr),
-                    process.stderr.decode('utf-8'))
+                    len(err.stderr),
+                    err.stderr.decode('utf-8'))
                         )
-    result = process.stdout.decode('utf-8')
+        result = f"# The following error occurred running {err.cmd}\n"
+        for line in err.stderr.decode('utf-8').split('\n'):
+            result += f"# {line}\n"
     data = data.replace('ZZZ', result)
     # for filename in args_data.get('files'):
         # try:
