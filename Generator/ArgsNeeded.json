@@ -215,6 +215,10 @@
         "args":["cow.obj"],
         "files":["cow.obj"]
     },
+    "GradientBackground":{
+        "args":["star-wars-vader-tie-fighter.obj"],
+        "files":["star-wars-vader-tie-fighter.obj"]
+    },
     "HiddenLineRemoval":{
         "args":["cow.obj"],
         "files":["cow.obj"]
