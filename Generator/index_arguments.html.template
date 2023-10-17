@@ -9,6 +9,11 @@
 <body>
   <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
   <script type='text/javascript'>
+    document.addEventListener('keydown', function(event) {
+        if (event.key == "Q" || event.key == "q" || event.key == "E" || event.key == "e")
+            event.preventDefault();
+    }, true);
+
     var Module = {
         'arguments': ['YYY'],
       'canvas': (function () {

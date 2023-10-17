@@ -14,7 +14,7 @@ AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::
 BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
 
 - IO:
-OBJImporter: Index out of bounds (looks like SDL issue)
+OBJImporter: needs -s STACK_SIZE=2mb (or less, did not test)
 ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-use in the frag shader, but is undeclared in the vert shader
 ReadLegacyUnstructuredGrid: Error: no override found for 'vtkContextDevice2D'
 
@@ -72,7 +72,8 @@ InterpolateCamera: way too much load, browser freezes for 2-3 min before render 
 Model: interactor is broken
 MotionBlur: render only shows the first frame
 OutlineGlowPassm, Shadows: does not compile (undefined symbol glPassThrough)
-PBR*: needs C++17 -> shader does not compile
+PBR*: needs C++17 -> issues with some hardware configurations
+PBR_Skybox_Texturing: no file path for texture: emissive
 Rotations: Background doesn't show
 RotationsA,B,C,D: missing Rotations.cxx
 Shadows, GradientBackground: Error: indirect call to signature mismatch
