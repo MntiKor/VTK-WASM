@@ -1,9 +1,17 @@
 #!/usr/bin/env python
 
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
+def remove_prefix(text, prefix):
+    if sys.version_info > (3, 9):
+        return text.removeprefix(prefix)
+    else:
+        if text.startswith(prefix): # only modify the text if it starts with the prefix
+            text = text.replace(prefix, "", 1) # remove one instance of prefix
+        return text
 
 def get_program_parameters():
     import argparse
@@ -184,7 +192,7 @@ def generate_find_package(vtk_src_dir, application_srcs):
 
     res = ['find_package(VTK', ' COMPONENTS']
     for m in sorted(all_modules):
-        m = m.removeprefix('VTK::')
+        m = remove_prefix(m, 'VTK::')
         res.append(' ' * 2 + m)
     res.append('REQUIRED)')
     return res
