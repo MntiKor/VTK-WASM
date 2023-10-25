@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 project(XXX)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # # -----------------------------------------------------------------------------
 # # EMSCRIPTEN only
 # # -----------------------------------------------------------------------------
@@ -44,7 +47,12 @@ set(emscripten_compile_options)
 list(APPEND emscripten_link_options
   "SHELL:-s WASM=1"
   "SHELL:-s ALLOW_MEMORY_GROWTH=1"
+  "SHELL:-s STACK_SIZE=2mb"
   "SHELL:-s FORCE_FILESYSTEM"
+)
+
+list(APPEND emscripten_compile_options
+  "SHELL:-std=c++17"
 )
 
 set(emscripten_debug_options)

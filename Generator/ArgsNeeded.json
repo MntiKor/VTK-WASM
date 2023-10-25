@@ -192,7 +192,7 @@
         "files":["cowHead.vtp"]
     },
     "SubdivisionDemo":{
-        "args":["footbones.ply", "20"],
+        "args":["footbones.ply", "2"],
         "files":["footbones.ply"]
     },
     "MatrixMathFilter":{
@@ -268,7 +268,7 @@
         "files":["PBR_Examples"]
     },
     "PBR_Skybox_Texturing":{
-        "args":["PBR_Parameters.json"],
+        "args":["PBR_Skybox_Texturing.json"],
         "files":["PBR_Examples"]
     },
     "Rainbow":{
