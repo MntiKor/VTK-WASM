@@ -12,7 +12,7 @@ chose not to display a live preview of those that would only show you text.
 ## Uncompatible dependancies
 
 Some examples use external dependancies that either could not be built in WebAssembly
-(Qt, RenderMan).
+(Qt) or are not Open Source (RenderMan).
 
 Some VTK modules aren't WASM-compatible either,
 like RenderingContextOpenGL2 or RenderingGL2PSOpenGL2.
