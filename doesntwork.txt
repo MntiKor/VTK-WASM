@@ -1,6 +1,6 @@
 - DataStructures:
 KDTreeTimingDemo, ModifiedBSPTreeTimingDemo, OBBTreeTimingDemo, OctreeTimingDemo: Error: no override found for 'vtkContextDevice2D'
-VisualizeKDTree: KdTree seems broken
+VisualizeKDTree: Built-in Dual Depth Peeling is not supported on ES3
 
 - Filtering:
 GenericClip: requires to build vtk with ENABLE_TESTING on, which requires ENABLE_sqlite
@@ -64,7 +64,6 @@ Model: interactor is broken
 OutlineGlowPass, Shadows: does not compile (undefined symbol glPassThrough)
 PBR_Skybox_Texturing: no file path for texture: emissive
 Rotations: Background doesn't show
-GradientBackground: Error: indirect call to signature mismatch
 
 - Shaders:
 BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
