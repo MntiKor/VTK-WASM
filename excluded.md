@@ -5,7 +5,7 @@ There are the reasons:
 
 ## No render
 
-A lot of examples are here do show pipelines, algorithms, or utils that
+A lot of examples are here to show pipelines, algorithms, or utils that
 does not always have a render (or whose render is not important), so we
 chose not to display a live preview of those that would only show you text.
 
