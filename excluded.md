@@ -9,7 +9,7 @@ A lot of examples are here do show pipelines, algorithms, or utils that
 does not always have a render (or whose render is not important), so we
 chose not to display a live preview of those that would only show you text.
 
-## Uncompatible dependancies
+## Incompatible dependancies
 
 Some examples use external dependancies that either could not be built in WebAssembly
 (Qt) or are not Open Source (RenderMan).
