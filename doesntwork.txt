@@ -1,17 +1,8 @@
 - DataStructures:
-KDTreeTimingDemo, ModifiedBSPTreeTimingDemo, OBBTreeTimingDemo, OctreeTimingDemo: Error: no override found for 'vtkContextDevice2D'
 VisualizeKDTree: Built-in Dual Depth Peeling is not supported on ES3
-
-- Filtering:
-GenericClip: requires to build vtk with ENABLE_TESTING on, which requires ENABLE_sqlite
-
-- Graphs:
-AdjacentVertexIterator: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
-BoostBreadthFirstSearchTree: does not compile (InfovisBoostGraphAlgorithms missing)
 
 - IO:
 ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-use in the frag shader, but is undeclared in the vert shader
-ReadLegacyUnstructuredGrid: Error: no override found for 'vtkContextDevice2D'
 
 - ImageData:
 ImageDataGeometryFilter, ImageNormalize, ImageWeightedSum: no error but render inaccurate with the screenshot
@@ -25,7 +16,6 @@ RGBToYIQ: error YIQ color space requires negative numbers
 
 - InfoVis:
 DelimitedTextReader: uncaught exception 1587448
-MutableGraphHelper: Error: vtkTreeLayoutStrategy: Layout only works if VTK::InfovisBoostGraphAlgorithms is available
 
 - Interaction:
 UserEvent: does not compile: vtkTestFilter.h file not found
@@ -43,7 +33,8 @@ MarchingCubes: no error but render inaccurate with the screenshot
 HighlightSelectedPoints: selection is "all or nothing", unable to select a portion of the points
 
 - Plotting:
-AreaPlot, BarChart, BoxChart, ChartMatrix, FunctionalBagPlot, Histogram2D, LinePlot, ParallelCoordinates, PieChart, PlotLine3D, ScatterPlot, StackedBar, StackedPlot, SurfacePlot: Error: no override found for 'vtkContextDevice2D'
+ChartMatrix, ScatterPlot: points size too small
+PlotLine3D, SurfacePlot: Shader does not compile: Uniform `numClipPlanes` is not linkable between attached shaders
 ChartOn3DScene, Diagram, MultiplePlots: indirect call to null
 
 - Points:
@@ -55,14 +46,9 @@ PowercrustExtractSurface: does not compile: vtkPowerCrustSurfaceReconstruction.h
 - PolyData:
 PointLocatorDemo: no error but interactions don't work
 
-- Qt:
-Still unable to build Qt for wasm
-
 - Rendering:
-InterpolateCamera: way too much load, browser freezes for 2-3 min before render loads
-Model: interactor is broken
-OutlineGlowPass, Shadows: does not compile (undefined symbol glPassThrough)
-PBR_Skybox_Texturing: no file path for texture: emissive
+Model: Render broken
+PBR_HDR_Environment: No mipmap generation
 Rotations: Background doesn't show
 
 - Shaders:
@@ -73,7 +59,6 @@ BlankPoint: result unaccurate with screenshot
 
 - Texture:
 AnimateVectors: Animation not working
-TextureCutSphere: indirect call to null
 
 - Utilities:
 FullScreen: useless

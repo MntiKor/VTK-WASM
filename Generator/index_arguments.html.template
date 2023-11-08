@@ -6,18 +6,39 @@
   <meta charset="utf-8" />
 </head>
 
-<body>
-  <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+<body style="margin: 0px">
+  <div id="display-div" style="display: flex; flex-direction: row; width: 100vw; height: 100vh">
+    <div id="loading">
+      <p>Loading WebAssembly environment. This could take some time. More information:</p>
+      <p><a href="https://emscripten.org/">&bull; Emscripten, a WebAssembly compiler.</a></p>
+      <p><a href="https://hub.docker.com/r/kitware/vtk-wasm">&bull; VTK-WASM Docker image.</a></p>
+      <p><a href="https://docs.vtk.org/en/latest/advanced/build_wasm_emscripten.html">&bull; Instructions to build and install VTK-WASM on your system.</a></p>
+    </div>
+    <canvas id="canvas" style="width: 75vw; height: 100vh; display:none;"></canvas>
+    <textarea readonly id="output" rows="8" style="width: 25vw; margin-left: 2px; resize: none; border: none; outline: none; padding: 0"></textarea>
+  </div>
   <script type='text/javascript'>
     document.addEventListener('keydown', function(event) {
         if (event.key == "Q" || event.key == "q" || event.key == "E" || event.key == "e")
             event.preventDefault();
     }, true);
 
+    var canvas = document.getElementById('canvas');
+
+    if (window.self !== window.top)
+    {
+        document.getElementById('display-div').style.flexDirection = 'column';
+        var output = document.getElementById('output');
+        output.style.height = '25vh';
+        output.style.width = '100vw';
+        output.style.margin = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '75vh';
+    }
+
     var Module = {
         'arguments': ['YYY'],
       'canvas': (function () {
-        var canvas = document.getElementById('canvas');
         canvas.addEventListener(
           "webglcontextlost",
           function (e) {
@@ -29,9 +50,15 @@
         return canvas;
       })(),
       'print': (function () {
-        return function (text) {
-          text = Array.prototype.slice.call(arguments).join(' ');
-          console.info(text);
+          var element = document.getElementById('output');
+          if (element) element.value = ''; // clear browser cache
+          return function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            console.log(text);
+            if (element) {
+              element.value += text + "\n";
+              element.scrollTop = element.scrollHeight; // focus on bottom
+            }
         };
       })(),
       'printErr': function (text) {
@@ -40,10 +67,10 @@
       },
       'onRuntimeInitialized': function () {
         console.log('WASM runtime initialized');
-        // sends a resize event so that the render window fills up browser tab dimensions.
-        setTimeout(() => {
-          window.dispatchEvent(new Event('resize'));
-        }, 0);
+        var loading = document.getElementById('loading');
+        loading.style.display = 'none';
+        console.log('WASM runtime initialized');
+        canvas.style.display = 'block';
         // focus on the canvas to grab keyboard inputs.
         canvas.setAttribute('tabindex', '0');
         // grab focus when the render window region receives mouse clicks.

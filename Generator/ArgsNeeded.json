@@ -1178,5 +1178,9 @@
     "HighlightSelection":{
         "args":["cow.vtp"],
         "files":["cow.vtp"]
+    },
+    "TransientHDFReader":{
+        "args":["warping_spheres.vtkhdf"],
+        "files":["warping_spheres.vtkhdf"]
     }
 }

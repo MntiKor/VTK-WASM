@@ -178,17 +178,17 @@ def generate_find_package(vtk_src_dir, application_srcs):
         all_modules.add('VTK::InteractionStyle')
         all_modules.add('VTK::RenderingFreeType')
         # all_modules.add('VTK::RenderingGL2PSOpenGL2')
-        # all_modules.add('VTK::RenderingContextOpenGL2')
+        all_modules.add('VTK::RenderingContextOpenGL2')
     if 'VTK::DomainsChemistry' in all_modules:
         all_modules.add('VTK::DomainsChemistryOpenGL2')
     if 'VTK::RenderingVolume' in all_modules:
         all_modules.add('VTK::RenderingVolumeOpenGL2')
-    # if 'VTK::RenderingContext2D' in all_modules:
-        # all_modules.add('VTK::RenderingContextOpenGL2')
+    if 'VTK::RenderingContext2D' in all_modules:
+        all_modules.add('VTK::RenderingContextOpenGL2')
     if 'VTK::IOExport' in all_modules:
         all_modules.add('VTK::IOExportOpenGL2')
         all_modules.add('VTK::IOExportPDF')
-        # all_modules.add('VTK::RenderingContextOpenGL2')
+        all_modules.add('VTK::RenderingContextOpenGL2')
 
     res = ['find_package(VTK', ' COMPONENTS']
     for m in sorted(all_modules):

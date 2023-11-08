@@ -1,35 +1,48 @@
-# Excluded Examples:
+# The "View Live" option (only available for Cxx examples)
+
+## WebAssembly
+
+WebAssembly (WASM) is a new way of running code inside a web page.
+It's a technology which allows a C/C++ code to be executed
+by the web browser as if it was a JS script.
+
+## VTK-WASM
+
+With the new web graphics APIs that appeared recently (WebGL, WebGPU...),
+we have been able to build VTK for WebAssembly. Not all modules are available
+but we keep on improving VTK-WASM, and this website is a display of what is
+working, and what is not.
+
+A docker image is available [here](https://hub.docker.com/r/kitware/vtk-wasm).
+
+To build VTK-WASM manually, we use [Emscripten](https://emscripten.org/). You will
+find instructions on how to build and use it [here](https://docs.vtk.org/en/latest/advanced/build_wasm_emscripten.html).
+
+## Excluded Examples
 
 Some examples do not implement a live preview feature in WebAssembly.
 There are the reasons:
 
-## No render
+### No render
 
 A lot of examples are here to show pipelines, algorithms, or utils that
 does not always have a render (or whose render is not important), so we
 chose not to display a live preview of those that would only show you text.
 
-## Incompatible dependancies
+### Incompatible dependencies
 
-Some examples use external dependancies that either could not be built in WebAssembly
+Some examples use external dependencies that either could not be built in WebAssembly
 (Qt) or are not Open Source (RenderMan).
 
-Some VTK modules aren't WASM-compatible either,
+Some VTK modules aren't WASM-compatible or not fully working,
 like RenderingContextOpenGL2 or RenderingGL2PSOpenGL2.
 Those can break some examples that are then removed from vtk-examples-wasm:
 
-- DataStructures/KDTreeTimingDemo, ModifiedBSPTreeTimingDemo,
-  OBBTreeTimingDemo, OctreeTimingDemo
-
-- IO/ReadLegacyUnstructuredGrid
-
 - Images/CombineImages
 
-- Plotting/AreaPlot, BarChart, BoxChart, ChartMatrix, FunctionalBagPlot,
-  Histogram2D, LinePlot, ParallelCoordinates, PieChart, PlotLine3D, ScatterPlot,
-StackedBar, StackedPlot, SurfacePlot
+- Plotting/ChartMatrix, ChartOn3DScene, Diagram, MultiplePlots, ScatterPlot, SurfacePlot
 
-## Irrelevant features
+### Irrelevant features
 
 A few examples use features that aren't relevant with WebAssembly usage
 (FullScreen, OpenVR).
@@ -38,9 +51,9 @@ There are examples which are just here to show different arguments
 for the same code (Rotations{A,B,C,D}, WalkCow{A,B}...).
 Those are also removed for practical reasons.
 
-## Technical considerations
+### Technical considerations
 
-In order to increase build times, stability and bandwidth,
+In order to improve build times, stability and bandwidth,
 vtk-examples-wasm does not use Boost Library features even though it is provided
 by Emscripten Ports. This forces us to remove a few examples:
 
@@ -48,7 +61,7 @@ by Emscripten Ports. This forces us to remove a few examples:
 
 - InfoVis/MutableGraphHelper
 
-Second issue: vtk is initially writen for OpenGL2. As WebAssembly uses
+Second issue: VTK is initially writen for OpenGL2. As VTK-WASM uses
 WebGL2 (OpenGL ES3), a lot of features need to be rewritten to comply
 with WebGL standards. It takes a lot of time, and a few examples will have
 to wait to be fully integrated:

@@ -261,3 +261,6 @@ ShowEvent
 SideBySideRenderWindowsQt
 SubdivisionDemo
 FullScreen
+AdjacentVertexIterator
+BoostBreadthFirstSearchTree
+MutableGraphHelper

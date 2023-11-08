@@ -21,6 +21,7 @@ if(NOT VTK_BINARY_DIR)
     IOExodus
     IOExport
     IOGeometry
+    IOHDF
     IOImage
     IOImport
     IOLegacy
@@ -123,6 +124,7 @@ if (BUILD_TESTING)
     SimplePointsReader
     StructuredPointsReader
     StructuredGridReader
+    TransientHDFReader
     VRMLImporter
     VRMLImporterDemo
     WriteBMP
@@ -279,6 +281,9 @@ if (BUILD_TESTING)
 
   add_test(${KIT}-StructuredGridReader ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
     TestStructuredGridReader ${DATA}/SampleStructGrid.vtk)
+
+  add_test(${KIT}-TransientHDFReader ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
+    TestTransientHDFReader ${DATA}/warping_spheres.vtkhdf)
 
   add_test(${KIT}-VRMLImporter ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${KIT}CxxTests
     TestVRMLImporter ${DATA}/sextant.wrl -E 30)
