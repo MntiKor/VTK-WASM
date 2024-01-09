@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <vtkCallbackCommand.h>
 #include <vtkCommand.h>
 #include <vtkDiscretizableColorTransferFunction.h>
@@ -16,13 +15,17 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
 
+#include <cstdlib>
+
 namespace {
 vtkNew<vtkDiscretizableColorTransferFunction> GetCTF();
-void Animate(vtkObject* caller, unsigned long eid, void* clientdata,
-             void* calldata);
+
+void Animate(vtkObject* caller, unsigned long /*eid*/, void* clientdata,
+             void* /*calldata*/);
+
 } // namespace
 
-int main(int ac, char** av)
+int main(int ac, char* av[])
 {
   if (ac != 2)
   {
@@ -37,7 +40,7 @@ int main(int ac, char** av)
   vtkNew<vtkHDFReader> reader;
   reader->SetFileName(av[1]);
   reader->Update();
-  std::cout << "number of steps: " << reader->GetNumberOfSteps() << endl;
+  std::cout << "Number of steps: " << reader->GetNumberOfSteps() << endl;
   auto polydata = vtkPolyData::SafeDownCast(reader->GetOutput());
 
   // Render the dataset.
@@ -61,14 +64,18 @@ int main(int ac, char** av)
   renWin->SetSize(1024, 512);
   renWin->Render();
 
-  // Add the animation callback.
-  vtkNew<vtkCallbackCommand> command;
-  command->SetCallback(&Animate);
-  command->SetClientData(reader);
-
   // Add the interactor.
   vtkNew<vtkRenderWindowInteractor> iren;
   iren->SetRenderWindow(renWin);
+
+  // Add the animation callback.
+  vtkNew<vtkCallbackCommand> command;
+  command->SetCallback(Animate);
+  command->SetClientData(reader);
+
+  // You must initialize the vtkRenderWindowInteractor
+  // before adding the observer and setting the repeating timer.
+  iren->Initialize();
   iren->AddObserver(vtkCommand::TimerEvent, command);
   iren->CreateRepeatingTimer(50);
 
@@ -141,8 +148,8 @@ vtkNew<vtkDiscretizableColorTransferFunction> GetCTF()
   return ctf;
 }
 
-void Animate(vtkObject* caller, unsigned long eid, void* clientdata,
-             void* calldata)
+void Animate(vtkObject* caller, unsigned long /*eid*/, void* clientdata,
+             void* /*calldata*/)
 {
   vtkRenderWindowInteractor* interactor =
       vtkRenderWindowInteractor::SafeDownCast(caller);

@@ -1,5 +1,11 @@
+- Animation:
+AnimateActors: No animation
+
 - DataStructures:
 VisualizeKDTree: Built-in Dual Depth Peeling is not supported on ES3
+
+- ExplicitStructuredGrid:
+CreateESGrid: ESGrid isn't rendered
 
 - IO:
 ReadCML: vtkShaderProgram: Links failed: Varying `vertexVCGSOutput` has static-use in the frag shader, but is undeclared in the vert shader
@@ -10,15 +16,17 @@ ImageDataGeometryFilter, ImageNormalize, ImageWeightedSum: no error but render i
 - Images:
 BackgroundImage: Background render broken
 CombineImages: Error: GLctx is undefined
-CombiningRGBChannels, ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper, ImageSobel2D, ResizeImage: no error but render inaccurate with the screenshot
-ImageWarp: work well but console full of warnings
+CombiningRGBChannels, ImageContinuousDilate3D, ImageContinuousErode3D, ImageCorrelation, ImageDifference, ImageMapper, ImageSobel2D, ImageText, ResizeImage: no error but render inaccurate with the screenshot
 RGBToYIQ: error YIQ color space requires negative numbers
 
 - InfoVis:
-DelimitedTextReader: uncaught exception 1587448
+DelimitedTextReader: uncaught exception
 
 - Interaction:
 UserEvent: does not compile: vtkTestFilter.h file not found
+
+- Lighting:
+Light, LightActor: No render of lights
 
 - Medical:
 MedicalDemo4: vtkTextureObject: failed to determine texture parameters
@@ -27,29 +35,29 @@ MedicalDemo4: vtkTextureObject: failed to determine texture parameters
 PointInterpolator: uncaught exception 1584136
 
 - Modelling:
+Delaunay3DDemo: no slider
 MarchingCubes: no error but render inaccurate with the screenshot
 
 - Picking:
 HighlightSelectedPoints: selection is "all or nothing", unable to select a portion of the points
 
 - Plotting:
-ChartMatrix, ScatterPlot: points size too small
+ChartMatrix, ChartOn3DScene, MultiplePlots, ScatterPlot: points size too small
+Diagram: default view shows only half the image, full tab images works well
 PlotLine3D, SurfacePlot: Shader does not compile: Uniform `numClipPlanes` is not linkable between attached shaders
-ChartOn3DScene, Diagram, MultiplePlots: indirect call to null
 
 - Points:
 CompareExtractSurface, PoissonExtractSurface: does not compile: vtkPoissonReconstruction.h file not found
-DensifyPoints, ExtractSurface, ExtractSurfaceDemo, NormalEstimation, SignedDistance, UnsignedDistance: error: indirect call to signature mismatch
 ExtractEnclosedPoints: works but error in console: vtkMultiThreader unable to create a thread
 PowercrustExtractSurface: does not compile: vtkPowerCrustSurfaceReconstruction.h file not found
 
 - PolyData:
-PointLocatorDemo: no error but interactions don't work
+ExternalContour: no render of the left element
+HighlightBadCells: doesn't highlight
 
 - Rendering:
-Model: Render broken
+OutlineGlowPass: No outline
 PBR_HDR_Environment: No mipmap generation
-Rotations: Background doesn't show
 
 - Shaders:
 BozoShader, BozoShaderDemo, CubeMap, MarbleShader, MarbleShaderDemo, SpatterShader: could not compile vtkShaderProgram
@@ -61,24 +69,22 @@ BlankPoint: result unaccurate with screenshot
 AnimateVectors: Animation not working
 
 - Utilities:
-FullScreen: useless
+RenderScalarToFloatBuffer: warning: readPixels: Format and type RED/FLOAT incompatible with this RGBA32F attachment
 
 - Visualization:
 ChooseTextColorDemo: no text shown
 CorrectlyRenderTranslucentGeometry: works but Error: Built in Dual Depth Peeling is not supported on ES3
 EdgePoints: doesn't show the model
 ExtrudePolyDataAlongLine: does not compile: vtkFrenetSerretFrame.h not found
-RandomProbe: Error: indirect call to null
 FroggieSurface: WebGL2RenderingContext.bufferData: Argument 2 can't be an ArrayBuffer or an ArrayBufferView larger than 2 GB
-
-- VisualizationAlgorithms:
-LOx, LOxGrid: Indirect call to signature Mismatch
+RandomProbe: Error: indirect call to null
+LabeledMesh: Labels display at random positions
+TextureMapImageData: no texture
 
 - VolumeRendering:
-FixedPointVolumeRayCastMapperCT: Failed to determine texture parameters
-IntermixedUnstructuredGrid: Error: index out of bounds
-MinIntensityRendering, SimpleRayCast: Failed to determine texture parameters
+FixedPointVolumeRayCastMapperCT, MinIntensityRendering, SimpleRayCast: Failed to determine texture parameters
 RayCastIsosurface: shader failed to compile
 
 - Widgets:
+CameraOrientationWidget: Widget not showing
 SeedWidgetImage: image rendering broken

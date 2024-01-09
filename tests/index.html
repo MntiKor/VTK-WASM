@@ -1,0 +1,28 @@
+<body>
+    <button id="myBtn">View Live</button>
+    <iframe id="frame" src="about:blank" style="width: 80vw; height: 80vh; border: none; display: none"></iframe>
+    <p>test bla bla bla</p>
+    <script>
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        var frame = document.getElementById("frame");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            if (frame.src === "about:blank")
+            {
+                frame.style.display = "block";
+                frame.src = "http://localhost:1234";
+                btn.innerText = "Open in new tab";
+            }
+            else
+            {
+                frame.style.display = "none";
+                frame.src = "about:blank";
+                btn.innerText = "View Live";
+                window.open("http://localhost:1234", "_blank");
+            }
+        }
+    </script>
+</body>

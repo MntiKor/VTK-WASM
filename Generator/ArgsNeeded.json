@@ -8,7 +8,7 @@
         "files":["SainteHelens.dem"]
     },
     "GLTFImporter":{
-        "args":["FlightHelmet.gltf"],
+        "args":["FlightHelmet/FlightHelmet.gltf"],
         "files":["FlightHelmet"]
     },
     "HDRReader":{
@@ -167,6 +167,14 @@
         "args":["combxyz.bin", "combq.bin"],
         "files":["combxyz.bin", "combq.bin"]
     },
+    "CapClip":{
+        "args":["cow.obj"],
+        "files":["cow.obj"]
+    },
+    "ClipFrustum":{
+        "args":["Armadillo.ply"],
+        "files":["Armadillo.ply"]
+    },
     "FitToHeightMap":{
         "args":["SainteHelens.dem"],
         "files":["SainteHelens.dem"]
@@ -192,7 +200,7 @@
         "files":["cowHead.vtp"]
     },
     "SubdivisionDemo":{
-        "args":["footbones.ply", "2"],
+        "args":["footbones.ply", "20"],
         "files":["footbones.ply"]
     },
     "MatrixMathFilter":{
@@ -552,11 +560,11 @@
         "files":["Infovis-XML-vtkclasses.xml", "Infovis-XML-vtklibrary.xml"]
     },
     "WordCloud":{
-        "args":["Gettysburg.txt", "--dpi", "150", "--fontfile", "Canterbury.ttf"],
+        "args":["Gettysburg.txt", "--dpi", "150", "--fontFile", "Canterbury.ttf"],
         "files":["Gettysburg.txt", "Canterbury.ttf"]
     },
     "WordCloudDemo":{
-        "args":["Gettysburg.txt", "--dpi", "150", "--fontfile", "Canterbury.ttf"],
+        "args":["Gettysburg.txt", "--dpi", "150", "--fontFile", "Canterbury.ttf"],
         "files":["Gettysburg.txt", "Canterbury.ttf"]
     },
     "XGMLReader":{
@@ -752,7 +760,7 @@
         "files":["masonry.bmp"]
     },
     "WarpSurface":{
-        "args":["cowHead.vtp"],
+        "args":["cowHead.vtp", "0.1"],
         "files":["cowHead.vtp"]
     },
     "PolyDataRIB":{
@@ -808,8 +816,8 @@
         "files":["v.vtk", "t.vtk", "k.vtk"]
     },
     "AlphaFrequency":{
-        "args":["loremipsum.txt"],
-        "files":["loremipsum.txt"]
+        "args":["Gettysburg.txt"],
+        "files":["Gettysburg.txt"]
     },
     "Arbitrary3DCursor":{
         "args":["Bunny.vtp"],
@@ -1182,5 +1190,13 @@
     "TransientHDFReader":{
         "args":["warping_spheres.vtkhdf"],
         "files":["warping_spheres.vtkhdf"]
+    },
+    "ConnectivityFilterDemo":{
+        "args":["stratocaster.ply"],
+        "files":["stratocaster.ply"]
+    },
+    "ContoursFromPolyData":{
+        "args":["Bunny.vtp"],
+        "files":["Bunny.vtp"]
     }
 }

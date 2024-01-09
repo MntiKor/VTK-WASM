@@ -1,40 +1,185 @@
-project (${WIKI}Animation)
 
-if(NOT VTK_BINARY_DIR)
-  set(VTK_LIBRARIES "")
-  find_package(VTK COMPONENTS
-    CommonColor
-    CommonCore
-    CommonDataModel
-    FiltersSources
-    InteractionStyle
-    RenderingCore
-    RenderingOpenGL2
-    RenderingFreeType
-    OPTIONAL_COMPONENTS
-    TestingRendering
-    QUIET
-    )
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
+
+project(AnimateActors)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# # -----------------------------------------------------------------------------
+# # EMSCRIPTEN only
+# # -----------------------------------------------------------------------------
+
+if (NOT EMSCRIPTEN)
+  message("Skipping example: This needs to run inside an Emscripten build environment")
+  return ()
+endif ()
+
+# -----------------------------------------------------------------------------
+# Handle VTK dependency
+# -----------------------------------------------------------------------------
+
+find_package(VTK
+ COMPONENTS
+  CommonColor
+  CommonCore
+  CommonDataModel
+  FiltersSources
+  InteractionStyle
+  RenderingContextOpenGL2
+  RenderingCore
+  RenderingFreeType
+  RenderingOpenGL2
+)
+
+
+if (NOT VTK_FOUND)
+  message("Skipping example: ${VTK_NOT_FOUND_MESSAGE}")
+  return ()
+endif ()
+
+# -----------------------------------------------------------------------------
+# Compile example code
+# -----------------------------------------------------------------------------
+
+add_executable(AnimateActors AnimateActors.cxx)
+
+target_link_libraries(AnimateActors
+  PRIVATE
+  ${VTK_LIBRARIES}
+)
+# -----------------------------------------------------------------------------
+
+# WebAssembly build options
+# -----------------------------------------------------------------------------
+set(emscripten_link_options)
+set(emscripten_compile_options)
+
+list(APPEND emscripten_link_options
+  "SHELL:-s WASM=1"
+  "SHELL:-s ALLOW_MEMORY_GROWTH=1"
+  "SHELL:-s STACK_SIZE=2mb"
+)
+
+set(emscripten_debug_options)
+set(DEBUGINFO "PROFILE" CACHE STRING "Type of debug info")
+set_property(CACHE DEBUGINFO PROPERTY
+  STRINGS
+    NONE              # -g0
+    READABLE_JS       # -g1
+    PROFILE           # -g2
+    DEBUG_NATIVE      # -g3
+)
+
+if(DEBUGINFO STREQUAL "NONE")
+  list(APPEND emscripten_debug_options
+    "-g0"
+  )
+elseif(DEBUGINFO STREQUAL "READABLE_JS")
+  list(APPEND emscripten_debug_options
+    "-g1"
+  )
+  list(APPEND emscripten_link_options
+    "SHELL:-s DEMANGLE_SUPPORT=1"
+  )
+elseif(DEBUGINFO STREQUAL "PROFILE")
+  list(APPEND emscripten_debug_options
+    "-g2"
+  )
+  list(APPEND emscripten_link_options
+    "SHELL:-s DEMANGLE_SUPPORT=1"
+  )
+elseif(DEBUGINFO STREQUAL "DEBUG_NATIVE")
+  list(APPEND emscripten_debug_options
+    "-g3"
+  )
+  list(APPEND emscripten_link_options
+    "SHELL:-s ASSERTIONS=1"
+    "SHELL:-s DEMANGLE_SUPPORT=1"
+  )
 endif()
 
-set(KIT_LIBS ${VTK_LIBRARIES})
+# -----------------------------------------------------------------------------
+# Build options
+# -----------------------------------------------------------------------------
+set(emscripten_optimizations)
+set(OPTIMIZE "SMALLEST_WITH_CLOSURE" CACHE STRING "Emscripten optimization")
+set_property(CACHE OPTIMIZE PROPERTY
+  STRINGS
+    NO_OPTIMIZATION       # -O0
+    LITTLE                # -O1
+    MORE                  # -O2
+    BEST                  # -O3
+    SMALL                 # -Os
+    SMALLEST              # -Oz
+    SMALLEST_WITH_CLOSURE # -Oz --closure 1
+)
 
-#
-# Build all .cxx files in the directory
-file(GLOB ALL_FILES *.cxx)
-foreach(SOURCE_FILE ${ALL_FILES})
-  string(REPLACE ".cxx" "" TMP ${SOURCE_FILE})
-  string(REPLACE ${CMAKE_CURRENT_SOURCE_DIR}/ "" EXAMPLE ${TMP})
-  add_executable(${WIKI}${EXAMPLE} ${EXECUTABLE_FLAG} ${EXAMPLE}.cxx)
-  target_link_libraries(${WIKI}${EXAMPLE} PRIVATE ${KIT_LIBS})
-  vtk_module_autoinit(
-    TARGETS ${WIKI}${EXAMPLE}
-    MODULES ${VTK_LIBRARIES}
-    )
-endforeach()
+if(OPTIMIZE STREQUAL "NO_OPTIMIZATION")
+  list(APPEND emscripten_optimizations
+    "-O0"
+  )
+elseif(OPTIMIZE STREQUAL "LITTLE")
+  list(APPEND emscripten_optimizations
+    "-O1"
+  )
+elseif(OPTIMIZE STREQUAL "MORE")
+  list(APPEND emscripten_optimizations
+    "-O2"
+  )
+elseif(OPTIMIZE STREQUAL "BEST")
+  list(APPEND emscripten_optimizations
+    "-O3"
+  )
+elseif(OPTIMIZE STREQUAL "SMALL")
+  list(APPEND emscripten_optimizations
+    "-Os"
+  )
+elseif(OPTIMIZE STREQUAL "SMALLEST")
+  list(APPEND emscripten_optimizations
+    "-Oz"
+  )
+elseif(OPTIMIZE STREQUAL "SMALLEST_WITH_CLOSURE")
+  list(APPEND emscripten_optimizations
+    "-Oz"
+  )
+  list(APPEND emscripten_link_options
+    "--closure 1"
+  )
+endif()
 
-# Testing
-if (BUILD_TESTING)
-  set(KIT Animation)
-  include(${WikiExamples_SOURCE_DIR}/CMake/ExamplesTesting.cmake)
-endif ()
+target_compile_options(AnimateActors
+  PUBLIC
+    ${emscripten_compile_options}
+    ${emscripten_optimizations}
+    ${emscripten_debug_options}
+)
+
+target_link_options(AnimateActors
+  PUBLIC
+    ${emscripten_link_options}
+    ${emscripten_optimizations}
+    ${emscripten_debug_options}
+)
+
+# -----------------------------------------------------------------------------
+# VTK modules initialization
+# -----------------------------------------------------------------------------
+
+vtk_module_autoinit(
+  TARGETS  AnimateActors
+  MODULES  ${VTK_LIBRARIES}
+)
+
+# -----------------------------------------------------------------------------
+# Copy HTML to build directory
+# -----------------------------------------------------------------------------
+
+add_custom_command(
+  TARGET AnimateActors
+  POST_BUILD
+  COMMAND
+    ${CMAKE_COMMAND} -E copy_if_different
+      "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
+      $<TARGET_FILE_DIR:AnimateActors>
+)

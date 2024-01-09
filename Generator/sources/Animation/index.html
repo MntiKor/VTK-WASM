@@ -7,11 +7,11 @@
 
 <body style="margin: 0px">
   <div id="display-div" style="display: flex; flex-direction: row; width: 100vw; height: 100vh">
-    <div id="loading">
-      <p>Loading WebAssembly environment. This could take some time. More information:</p>
-      <p><a href="https://emscripten.org/">&bull; Emscripten, a WebAssembly compiler.</a></p>
-      <p><a href="https://hub.docker.com/r/kitware/vtk-wasm">&bull; VTK-WASM Docker image.</a></p>
-      <p><a href="https://docs.vtk.org/en/latest/advanced/build_wasm_emscripten.html">&bull; Instructions to build and install VTK-WASM on your system.</a></p>
+    <div id="loading" style="display: column">
+      Loading WebAssembly environment. This could take some time. More information:
+      <a href="https://emscripten.org/">&bull; Emscripten, a WebAssembly compiler.</a>
+      <a href="https://hub.docker.com/r/kitware/vtk-wasm">&bull; VTK-WASM Docker image.</a>
+      <a href="https://docs.vtk.org/en/latest/advanced/build_wasm_emscripten.html">&bull; Instructions to build and install VTK-WASM on your system.</a>
     </div>
     <canvas id="canvas" style="width: 75vw; height: 100vh; display:none;"></canvas>
     <textarea readonly id="output" rows="8" style="width: 25vw; margin-left: 2px; resize: none; border: none; outline: none; padding: 0"></textarea>
@@ -78,7 +78,7 @@
 
     window.mod = Module;
   </script>
-  <script type="text/javascript" src="XXX.js"></script>
+  <script type="text/javascript" src="AnimateActors.js"></script>
 </body>
 
 </html>

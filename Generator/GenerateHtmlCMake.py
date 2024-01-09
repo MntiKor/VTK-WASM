@@ -87,15 +87,6 @@ def GenerateExampleArgs(example_name, source_path, dest_path, vtk_source_path, a
         for line in err.stderr.decode('utf-8').split('\n'):
             result += f"# {line}\n"
     data = data.replace('ZZZ', result)
-    # for filename in args_data.get('files'):
-        # try:
-        #     shutil.copytree(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
-        # except OSError as exc: # python >2.5
-        #     if exc.errno in (errno.ENOTDIR, errno.EINVAL):
-        #         shutil.copy(os.path.join('Data', filename), os.path.join(dest_path, 'data', filename))
-        #     elif exc.errno == errno.EEXIST:
-        #         pass
-        #     else: raise
 
     with open(os.path.join(dest_path, 'CMakeLists.txt'), 'w') as cmake:
         cmake.write(data)
